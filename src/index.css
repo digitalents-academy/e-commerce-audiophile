@@ -46,6 +46,14 @@ h2 {
   text-align: center;
 }
 
+h3 {
+  text-align: left;
+  font-size: 38px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
 #hero p {
   font-size: 14px;
   width: 325px;
@@ -106,6 +114,34 @@ h2 {
   width: 300px;
 }
 
+/* zx7 speaker banner */
+#speaker-7 {
+  background: url('../assets/home/mobile/image-speaker-zx7.jpg');
+  background-size: cover;
+  max-width: 768px;
+  height:375px;
+  border-radius: 15px;
+}
+
+#speaker-7 .flex-container {
+  align-items: flex-start;
+  margin-left:30px;
+  width: 100%;
+  row-gap: 40px;
+}
+
+#speaker-7 a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  border: 1px solid black;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 15px 23px;
+  white-space: nowrap;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   #hero {
@@ -124,6 +160,18 @@ h2 {
     height: 350px;
     background-size: 200px, 1000px;
     background-position: center 70px, center -300px;
+  }
+
+  #speaker-7 {
+    background: url('../assets/home/tablet/image-speaker-zx7.jpg');
+    background-size: cover;
+    max-width: 768px;
+    height:350px;
+    border-radius: 15px;
+  }
+
+  #speaker-7 .flex-container {
+    margin-left: 50px;
   }
 }
 
@@ -145,6 +193,11 @@ h2 {
     text-align: left;
     font-size: 50px;
     line-height: 50px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 30px;
   }
 
   #hero p {
@@ -170,5 +223,18 @@ h2 {
   
   #speaker-9 h2 {
     width: 300px;
+  }
+
+  #speaker-7 {
+    background: url('../assets/home/desktop/image-speaker-zx7.jpg');
+    background-size: cover;
+    max-width: 1200px;
+    height:325px;
+    border-radius: 15px;
+  }
+
+  #speaker-7 .flex-container {
+    align-items: flex-start;
+    margin-left: 100px;
   }
 }
