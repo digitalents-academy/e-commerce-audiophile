@@ -5,7 +5,7 @@ const Hero = () => {
         <p id="label">New product</p>
         <h2>XX99 Mark II Headphones</h2>
         <p>Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
-        <a href="/">See product</a>
+        <a href="/" className="product-button">See product</a>
       </div>
     </div>
   )

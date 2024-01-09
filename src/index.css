@@ -22,7 +22,7 @@ body {
   height: 600px;
 }
 
-#hero .flex-container {
+.flex-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,7 @@ body {
   align-items: center;
 }
 
-#hero h2 {
+h2 {
   color: white;
   text-transform: uppercase;
   font-size: 45px;
@@ -67,6 +67,42 @@ body {
   font-size: 13px;
 }
 
+#speaker {
+  background: url('../assets/home/desktop/image-speaker-zx9.png'), url('../assets/home/desktop/pattern-circles.svg'), var(--orange);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 450px, 1150px;
+  background-position: 165px 70px, -190px -70px;
+  max-width:1200px;
+  height:600px;
+  border-radius: 15px;
+}
+
+#speaker .flex-container {
+  margin-left: 750px;
+  align-items: flex-start;
+}
+
+#speaker p {
+  font-size: 14px;
+  width: 325px;
+  color:var(--light-grey);
+}
+
+#speaker a {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 15px 23px;
+}
+
+#speaker h2 {
+  width: 300px;
+}
+
 @media (min-width:768px) and (max-width:1440px) {
   #hero {
     background-image: url('../assets/home/tablet/image-header.jpg');
@@ -75,21 +111,21 @@ body {
     height: 768px;
   }
 
-  #hero h2 {
+  h2 {
     font-size: 50px;
     line-height: 50px;
   }
 
   #hero a {
-    padding: 13px 23px;
+    padding: 15px 23px;
   }
 }
 
 @media (min-width: 1440px) {
   #hero {
     background-image: url('../assets/home/desktop/image-hero.jpg');
-    background-size: contain;
-    max-width: 1440px;
+    background-position: -170px -50px;
+    max-width: 1200px;
     height: 729px;
   }
 
@@ -98,8 +134,10 @@ body {
     margin:0;
   }
 
-  #hero h2 {
+  h2 {
     text-align: left;
+    font-size: 50px;
+    line-height: 50px;
   }
 
   #hero p {
@@ -107,6 +145,6 @@ body {
   }
 
   #hero a {
-    padding: 13px 23px;
+    padding: 15px 23px;
   }
 }
