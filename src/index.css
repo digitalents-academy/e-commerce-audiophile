@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+/* color variables */
 :root {
   --orange: rgb(216, 125, 74);
   --light-grey: rgba(255,255,255,0.7);
@@ -14,6 +15,7 @@ body {
   padding:20px;
 }
 
+/* hero/header styling */
 #hero {
   background-image: url('../assets/home/mobile/image-header.jpg');
   color: var(--dark-grey);
@@ -69,7 +71,8 @@ h2 {
   font-size: 13px;
 }
 
-#speaker {
+/* zx9 speaker banner */
+#speaker-9 {
   background: url('../assets/home/desktop/image-speaker-zx9.png'), url('../assets/home/desktop/pattern-circles.svg'), var(--orange);
   background-repeat: no-repeat, no-repeat;
   background-size: 200px, 700px;
@@ -80,14 +83,14 @@ h2 {
   padding-top:300px;
 }
 
-#speaker p {
+#speaker-9 p {
   font-size: 14px;
   width: 325px;
   color:var(--light-grey);
   text-align: center;
 }
 
-#speaker a {
+#speaker-9 a {
   text-decoration: none;
   color: white;
   background-color: black;
@@ -99,10 +102,11 @@ h2 {
   white-space: nowrap;
 }
 
-#speaker h2 {
+#speaker-9 h2 {
   width: 300px;
 }
 
+/* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   #hero {
     background-image: url('../assets/home/tablet/image-header.jpg');
@@ -116,13 +120,14 @@ h2 {
     line-height: 50px;
   }
 
-  #speaker {
+  #speaker-9 {
     height: 350px;
     background-size: 200px, 1000px;
     background-position: center 70px, center -300px;
   }
 }
 
+/* desktop mode */
 @media (min-width: 1440px) {
   #hero {
     background-image: url('../assets/home/desktop/image-hero.jpg');
@@ -146,7 +151,7 @@ h2 {
     text-align: left;
   }
 
-  #speaker {
+  #speaker-9 {
     background-size: 450px, 1150px;
     background-position: 165px 70px, -190px -70px;
     max-width:1200px;
@@ -154,16 +159,16 @@ h2 {
     padding-top:0;
   }
   
-  #speaker .flex-container {
+  #speaker-9 .flex-container {
     margin-left: 750px;
     align-items: flex-start;
   }
   
-  #speaker p {
+  #speaker-9 p {
     text-align: left;
   }
   
-  #speaker h2 {
+  #speaker-9 h2 {
     width: 300px;
   }
 }
