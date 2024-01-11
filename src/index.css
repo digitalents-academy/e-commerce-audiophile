@@ -23,6 +23,7 @@ body {
   background-position: center -75px;
   max-width: 768px;
   height: 600px;
+  margin:auto;
 }
 
 .flex-container {
@@ -89,6 +90,7 @@ h3 {
   height:350px;
   border-radius: 10px;
   padding-top:300px;
+  margin:auto;
 }
 
 #speaker-9 p {
@@ -121,6 +123,7 @@ h3 {
   max-width: 768px;
   height:375px;
   border-radius: 10px;
+  margin:auto;
 }
 
 #speaker-7 .flex-container {
@@ -149,13 +152,15 @@ h3 {
   row-gap: 25px;
   max-width: 768px;
   height: 550px;
+  margin:auto;
 }
 
 #earphone-photo {
   flex-basis: 50%;
   background: url('../assets/home/mobile/image-earphones-yx1.jpg');
   border-radius: 10px;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
 }
 
 #earphones-1 .flex-container {
