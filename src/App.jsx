@@ -1,8 +1,8 @@
 import './index.css'
-import Hero from './Hero'
-import ZX9Speaker from './ZX9Speaker'
-import ZX7Speaker from './ZX7Speaker'
-import YX1Earphones from './YX1Earphones'
+import Hero from './components/home/Hero'
+import ZX9Speaker from './components/home/ZX9Speaker'
+import ZX7Speaker from './components/home/ZX7Speaker'
+import YX1Earphones from './components/home/YX1Earphones'
 
 const App = () => {
   return (
