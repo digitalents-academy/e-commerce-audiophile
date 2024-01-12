@@ -287,6 +287,17 @@ h4 {
     background: url('../assets/home/tablet/image-earphones-yx1.jpg');
     background-size: cover;
   }
+
+  #catalog {
+    flex-direction: row;
+    max-width: 768px;
+    column-gap: 15px;
+  }
+
+  #catalog a {
+    flex-basis: 33%;
+    padding: 25px 35px;
+  }
 }
 
 /* desktop mode */
