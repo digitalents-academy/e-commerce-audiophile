@@ -88,22 +88,31 @@ h3 {
   display: flex;
   column-gap: 30px;
   margin: auto;
+  margin-top: 120px;
   max-width: 1200px;
 }
 
 #catalog a {
   background-color: var(--lighter-grey);
   text-decoration: none;
-  padding: 40px 80px;
+  padding: 25px 80px;
   flex-basis: 33%;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.catalog-image {
+  width: 100%;
+  margin-top: -120px;
 }
 
 h4 {
   text-transform: uppercase;
   color: black;
   text-align: center;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 1px;
 }
@@ -111,11 +120,19 @@ h4 {
 #catalog div {
   text-transform: uppercase;
   width: 100%;
-  text-align: center;
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 13px;
+  line-height: 14px;
   font-weight: 800;
   color: var(--light-black);
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#catalog a:hover div {
+  color: var(--orange);
 }
 
 /* zx9 speaker banner */
