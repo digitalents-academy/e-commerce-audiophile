@@ -86,17 +86,17 @@ h3 {
 
 #catalog {
   display: flex;
-  column-gap: 30px;
   margin: auto;
   margin-top: 120px;
-  max-width: 1200px;
+  max-width: 768px;
+  flex-direction: column;
+  row-gap: 100px;
 }
 
 #catalog a {
   background-color: var(--lighter-grey);
   text-decoration: none;
   padding: 25px 80px;
-  flex-basis: 33%;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -105,22 +105,23 @@ h3 {
 
 .catalog-image {
   width: 100%;
-  margin-top: -120px;
+  margin-top: -100px;
 }
 
 h4 {
   text-transform: uppercase;
   color: black;
   text-align: center;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 800;
   letter-spacing: 1px;
+  margin-top: -20px;
 }
 
 #catalog div {
   text-transform: uppercase;
   width: 100%;
-  font-size: 13px;
+  font-size: 15px;
   line-height: 14px;
   font-weight: 800;
   color: var(--light-black);
@@ -365,5 +366,27 @@ h4 {
 
   #earphones-1 h3, #earphones-1 a {
     margin-left: 50px;
+  }
+
+  #catalog {
+    column-gap: 30px;
+    max-width: 1200px;
+    flex-direction: row;
+  }
+  
+  #catalog a {
+    flex-basis: 33%;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  #catalog div {
+    font-size: 13px;
+  }
+  
+  .catalog-image {
+    margin-top: -120px;
   }
 }
