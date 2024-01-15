@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+body {
+    font-family: 'Manrope', sans-serif;
+    padding:20px;
+  }
+
+.header-main {
+    background-color: rgba(0, 0, 0, 0.5));
+    height: 100px;
+    width: 100%;
+    position: sticky;
+}
