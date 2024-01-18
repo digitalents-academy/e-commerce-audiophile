@@ -244,6 +244,52 @@ h4 {
   margin-left:30px;
 }
 
+/* advertisement space */
+#advert {
+  margin: auto;
+  max-width: 1200px;
+  display: flex;
+  height:550px;
+  column-gap: 40px;
+}
+
+#advert div:first-child {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  justify-content: center;
+  row-gap: 30px;
+}
+
+h5 {
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 1px;
+  font-weight: 800;
+  width: 70%;
+  text-transform: uppercase;
+}
+
+#advert p {
+  font-size: 15px;
+  color: var(--light-black);
+  width: 76%;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+#orange {
+  color: var(--orange);
+}
+
+#advert-image {
+  flex-basis: 50%;
+  background-image: url('../assets/shared/desktop/image-best-gear.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   #hero {
