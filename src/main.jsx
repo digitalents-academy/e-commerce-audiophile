@@ -9,20 +9,22 @@ import Speakers from './pages/Speakers.jsx'
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
+    children: [
+      {
+        path: "/headphones",
+        element: <Headphones />
+      },
+      {
+        path: "/speakers",
+        element: <Speakers />
+      },
+      {
+        path: "/earphones",
+        element: <Earphones />
+      }
+    ]
   },
-  {
-    path: "/headphones",
-    element: <Headphones />
-  },
-  {
-    path: "/speakers",
-    element: <Speakers />
-  },
-  {
-    path: "/earphones",
-    element: <Earphones />
-  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(

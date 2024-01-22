@@ -1,21 +1,15 @@
 import './index.css'
-// import Hero from './components/home/Hero'
-// import ZX9Speaker from './components/home/ZX9Speaker'
-// import ZX7Speaker from './components/home/ZX7Speaker'
-import YX1Earphones from './components/home/YX1Earphones'
-// import Catalog from './components/shared/Catalog'
-import Advert from './components/shared/Advert'
+import { Outlet } from 'react-router-dom'
 
 const App = () => {
   return (
+    <>
+    <header>Test Header</header>
     <div>
-      {/* <Hero />
-      <ZX9Speaker />
-      <ZX7Speaker />
-      */}
-      <YX1Earphones />
-      <Advert />
+      <Outlet />
     </div>
+    <footer>Test Footer</footer>
+    </>
   )
 }
 
