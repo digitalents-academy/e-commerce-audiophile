@@ -8,6 +8,7 @@
   --orange: rgb(216, 125, 74);
   --light-grey: rgba(255,255,255,0.7);
   --dark-grey: rgba(255,255,255,0.5);
+  --light-orange: rgb(251, 175, 133);
 }
 
 body {
@@ -72,6 +73,11 @@ h3 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#hero a:hover {
+  background-color: var(--light-orange);
 }
 
 #label {
@@ -110,6 +116,11 @@ h3 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#speaker-9 a:hover {
+  background-color: rgb(76, 76, 76);
 }
 
 #speaker-9 h2 {
@@ -143,6 +154,12 @@ h3 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#speaker-7 a:hover {
+  background-color: black;
+  color: white;
 }
 
 /* yx1 earphones */
@@ -186,6 +203,12 @@ h3 {
   padding: 15px 23px;
   white-space: nowrap;
   margin-left:30px;
+  transition: all 1s;
+}
+
+#earphones-1 a:hover {
+  background-color: black;
+  color: white;
 }
 
 /* tablet mode */
