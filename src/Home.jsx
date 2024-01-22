@@ -1,4 +1,4 @@
-import './index.css'
+import './styles/index.css'
 // import Hero from './components/home/Hero'
 // import ZX9Speaker from './components/home/ZX9Speaker'
 // import ZX7Speaker from './components/home/ZX7Speaker'
