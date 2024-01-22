@@ -6,7 +6,9 @@ const App = () => {
     backgroundColor: "black",
     textAlign: "center",
     width: "100%",
-    color: "white"
+    color: "white",
+    position: "relative",
+    zIndex: 1
   }
   return (
     <>

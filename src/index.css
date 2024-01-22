@@ -17,6 +17,25 @@ body {
   font-family: 'Manrope', sans-serif;
 }
 
+/* home page container */
+#hero-container {
+  background-color: rgb(25, 25, 25);
+}
+
+#products {
+  display: flex;
+  flex-direction: column;
+  max-width: 768px;
+  margin:auto;
+  row-gap: 50px;
+  padding: 5px;
+}
+
+.non-flex {
+  margin: 140px auto;
+  padding: 5px;
+}
+
 /* hero/header styling */
 #hero {
   background-image: url('../assets/home/mobile/image-header.jpg');
@@ -90,10 +109,9 @@ h3 {
 /* catalog */
 #catalog {
   display: flex;
-  margin: auto;
-  margin-top: 120px;
   max-width: 768px;
   flex-direction: column;
+  margin:auto;
   row-gap: 100px;
 }
 
@@ -150,7 +168,6 @@ h4 {
   height:350px;
   border-radius: 10px;
   padding-top:300px;
-  margin:auto;
 }
 
 #speaker-9 p {
@@ -188,7 +205,6 @@ h4 {
   max-width: 768px;
   height:375px;
   border-radius: 10px;
-  margin:auto;
 }
 
 #speaker-7 .flex-container {
@@ -223,7 +239,6 @@ h4 {
   row-gap: 25px;
   max-width: 768px;
   height: 550px;
-  margin:auto;
 }
 
 #earphone-photo {
@@ -267,8 +282,8 @@ h4 {
 
 /* advertisement space */
 #advert {
-  margin: auto;
   max-width: 768px;
+  margin:auto;
   display: flex;
   row-gap: 40px;
   flex-direction: column-reverse;
@@ -311,6 +326,10 @@ h5 {
 
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
+  #products, .non-flex {
+    padding: 0;
+  }
+
   #hero {
     background-image: url('../assets/home/tablet/image-header.jpg');
     background-size: contain;
@@ -384,6 +403,11 @@ h5 {
 
 /* desktop mode */
 @media (min-width: 1440px) {
+  #hero-container {
+    margin-top: -50px;
+    z-index: 0;
+  }
+
   #hero {
     background-image: url('../assets/home/desktop/image-hero.jpg');
     background-position: -170px -50px;
@@ -516,5 +540,13 @@ h5 {
     flex-basis: 50%;
     background-image: url('../assets/shared/desktop/image-best-gear.jpg');
     height: 100%;
+  }
+
+  #products {
+    max-width: 1200px;
+  }
+
+  #products, .non-flex {
+    padding: 0;
   }
 }

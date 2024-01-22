@@ -7,14 +7,22 @@ import ZX9Speaker from '../components/home/ZX9Speaker'
 
 const Home = () => {
   return (
-    <div>
+    <>
+    <div id="hero-container">
       <Hero />
+    </div>
+    <div className='non-flex'>
       <Catalog />
+    </div>
+      <div id="products">
       <ZX9Speaker />
       <ZX7Speaker />
       <YX1Earphones />
+      </div>
+      <div className='non-flex'>
       <Advert />
-    </div>
+      </div>
+    </>
   )
 }
 
