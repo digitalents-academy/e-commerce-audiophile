@@ -9,6 +9,7 @@
   --lighter-grey: rgb(241,241,241);
   --light-grey: rgba(255,255,255,0.7);
   --dark-grey: rgba(255,255,255,0.5);
+  --light-orange: rgb(251, 175, 133);
   --light-black: rgba(0, 0, 0, 0.5);
 }
 
@@ -74,6 +75,11 @@ h3 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#hero a:hover {
+  background-color: var(--light-orange);
 }
 
 #label {
@@ -165,6 +171,11 @@ h4 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#speaker-9 a:hover {
+  background-color: rgb(76, 76, 76);
 }
 
 #speaker-9 h2 {
@@ -198,6 +209,12 @@ h4 {
   letter-spacing: 1px;
   padding: 15px 23px;
   white-space: nowrap;
+  transition: all 1s;
+}
+
+#speaker-7 a:hover {
+  background-color: black;
+  color: white;
 }
 
 /* yx1 earphones */
@@ -241,6 +258,56 @@ h4 {
   padding: 15px 23px;
   white-space: nowrap;
   margin-left:30px;
+  transition: all 1s;
+}
+
+#earphones-1 a:hover {
+  background-color: black;
+  color: white;
+}
+
+/* advertisement space */
+#advert {
+  margin: auto;
+  max-width: 768px;
+  display: flex;
+  row-gap: 40px;
+  flex-direction: column-reverse;
+}
+
+#advert div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 40px;
+  text-align: center;
+}
+
+h5 {
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#advert p {
+  font-size: 18px;
+  color: var(--light-black);
+  line-height: 28px;
+  font-weight: 500;
+}
+
+#orange {
+  color: var(--orange);
+}
+
+#advert-image {
+  background-image: url('../assets/shared/mobile/image-best-gear.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  height: 350px;
 }
 
 /* advertisement space */
