@@ -1,21 +1,25 @@
 import './styles/index.css'
-// import Hero from './components/home/Hero'
-// import ZX9Speaker from './components/home/ZX9Speaker'
-// import ZX7Speaker from './components/home/ZX7Speaker'
-import YX1Earphones from './components/home/YX1Earphones'
-// import Catalog from './components/shared/Catalog'
-import Advert from './components/shared/Advert'
+import { Outlet, Link } from 'react-router-dom'
 
 const App = () => {
+  const placeholder = {
+    backgroundColor: "black",
+    textAlign: "center",
+    width: "100%",
+    color: "white",
+    position: "relative",
+    zIndex: 1
+  }
   return (
+    <>
+    <header style={placeholder}>
+      <Link to={`/`}>Home</Link> <Link to={`/headphones`}>Headphones</Link> <Link to={`/speakers`}>Speakers</Link> <Link to={`/earphones`}>Earphones</Link>
+    </header>
     <div>
-      {/* <Hero />
-      <ZX9Speaker />
-      <ZX7Speaker />
-      */}
-      <YX1Earphones />
-      <Advert />
+      <Outlet />
     </div>
+    <footer style={placeholder}>Placeholder Footer</footer>
+    </>
   )
 }
 
