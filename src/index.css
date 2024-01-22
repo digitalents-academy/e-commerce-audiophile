@@ -87,6 +87,59 @@ h3 {
   font-size: 13px;
 }
 
+/* catalog */
+#catalog {
+  display: flex;
+  margin: auto;
+  margin-top: 120px;
+  max-width: 768px;
+  flex-direction: column;
+  row-gap: 100px;
+}
+
+#catalog a {
+  background-color: var(--lighter-grey);
+  text-decoration: none;
+  padding: 25px 80px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.catalog-image {
+  width: 100%;
+  margin-top: -100px;
+}
+
+h4 {
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: -20px;
+}
+
+#catalog div {
+  text-transform: uppercase;
+  width: 100%;
+  font-size: 15px;
+  line-height: 14px;
+  font-weight: 800;
+  color: var(--light-black);
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+#catalog a:hover div {
+  color: var(--orange);
+}
+
 /* zx9 speaker banner */
 #speaker-9 {
   background: url('../assets/home/desktop/image-speaker-zx9.png'), url('../assets/home/desktop/pattern-circles.svg'), var(--orange);
@@ -212,6 +265,50 @@ h3 {
   color: white;
 }
 
+/* advertisement space */
+#advert {
+  margin: auto;
+  max-width: 768px;
+  display: flex;
+  row-gap: 40px;
+  flex-direction: column-reverse;
+}
+
+#advert div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 40px;
+  text-align: center;
+}
+
+h5 {
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#advert p {
+  font-size: 18px;
+  color: var(--light-black);
+  line-height: 28px;
+  font-weight: 500;
+}
+
+#orange {
+  color: var(--orange);
+}
+
+#advert-image {
+  background-image: url('../assets/shared/mobile/image-best-gear.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  height: 350px;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   #hero {
@@ -254,6 +351,34 @@ h3 {
   #earphone-photo {
     background: url('../assets/home/tablet/image-earphones-yx1.jpg');
     background-size: cover;
+  }
+
+  #catalog {
+    flex-direction: row;
+    max-width: 768px;
+    column-gap: 15px;
+  }
+
+  #catalog a {
+    flex-basis: 33%;
+    padding: 25px 35px;
+  }
+
+  #advert {
+    max-width: 768px;
+  }
+
+  #advert div:first-child {
+    align-items: center;
+  }
+
+  h5 {
+    width: 70%;
+  }
+
+  #advert-image {
+    background-image: url('../assets/shared/tablet/image-best-gear.jpg');
+    height: 300px;
   }
 }
 
@@ -335,7 +460,61 @@ h3 {
   #earphones-1 h3, #earphones-1 a {
     margin-left: 50px;
   }
-}* {
-  margin: 0;
-  padding: 0;
+
+  #catalog {
+    column-gap: 30px;
+    max-width: 1200px;
+    flex-direction: row;
+  }
+  
+  #catalog a {
+    flex-basis: 33%;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  #catalog div {
+    font-size: 13px;
+  }
+  
+  .catalog-image {
+    margin-top: -120px;
+  }
+
+  #advert {
+    max-width: 1200px;
+    height:550px;
+    column-gap: 40px;
+    flex-direction: row;
+  }
+  
+  #advert div:first-child {
+    flex-direction: column;
+    flex-basis: 50%;
+    justify-content: center;
+    row-gap: 30px;
+    text-align: left;
+  }
+  
+  h5 {
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 800;
+    width: 70%;
+  }
+  
+  #advert p {
+    font-size: 15px;
+    width: 76%;
+    line-height: 22px;
+    font-weight: 500;
+  }
+  
+  #advert-image {
+    flex-basis: 50%;
+    background-image: url('../assets/shared/desktop/image-best-gear.jpg');
+    height: 100%;
+  }
 }
