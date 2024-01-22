@@ -1,5 +1,5 @@
 import './index.css'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 
 const App = () => {
   const placeholder = {
@@ -12,7 +12,9 @@ const App = () => {
   }
   return (
     <>
-    <header style={placeholder}>Placeholder Header</header>
+    <header style={placeholder}>
+      <Link to={`/`}>Home</Link> <Link to={`/headphones`}>Headphones</Link> <Link to={`/speakers`}>Speakers</Link> <Link to={`/earphones`}>Earphones</Link>
+    </header>
     <div>
       <Outlet />
     </div>
