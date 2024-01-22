@@ -2,13 +2,19 @@ import './index.css'
 import { Outlet } from 'react-router-dom'
 
 const App = () => {
+  const placeholder = {
+    backgroundColor: "black",
+    textAlign: "center",
+    width: "100%",
+    color: "white"
+  }
   return (
     <>
-    <header>Test Header</header>
+    <header style={placeholder}>Placeholder Header</header>
     <div>
       <Outlet />
     </div>
-    <footer>Test Footer</footer>
+    <footer style={placeholder}>Placeholder Footer</footer>
     </>
   )
 }

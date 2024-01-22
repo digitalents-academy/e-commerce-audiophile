@@ -5,12 +5,17 @@ import App from './App.jsx'
 import Headphones from './pages/Headphones.jsx'
 import Earphones from './pages/Earphones.jsx'
 import Speakers from './pages/Speakers.jsx'
+import Home from './pages/Home.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/headphones",
         element: <Headphones />
