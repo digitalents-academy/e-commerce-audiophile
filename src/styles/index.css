@@ -13,8 +13,46 @@
   --light-black: rgba(0, 0, 0, 0.5);
 }
 
+/* general styling */
+
 body {
   font-family: 'Manrope', sans-serif;
+}
+
+h2 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+h3 {
+  text-align: left;
+  font-size: 38px;
+  line-height: 38px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h4 {
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-top: -20px;
+}
+
+h5 {
+  font-size: 40px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 /* home page container */
@@ -56,24 +94,6 @@ body {
   row-gap: 30px;
   margin:auto;
   align-items: center;
-}
-
-h2 {
-  color: white;
-  text-transform: uppercase;
-  font-size: 45px;
-  font-weight: 700;
-  line-height: 45px;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-h3 {
-  text-align: left;
-  font-size: 38px;
-  line-height: 38px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
 
 #hero p {
@@ -128,16 +148,6 @@ h3 {
 .catalog-image {
   width: 100%;
   margin-top: -100px;
-}
-
-h4 {
-  text-transform: uppercase;
-  color: black;
-  text-align: center;
-  font-size: 17px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-top: -20px;
 }
 
 #catalog div {
@@ -297,14 +307,6 @@ h4 {
   text-align: center;
 }
 
-h5 {
-  font-size: 40px;
-  line-height: 50px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
 #advert p {
   font-size: 18px;
   color: var(--light-black);
@@ -324,8 +326,30 @@ h5 {
   height: 350px;
 }
 
+/* category headings */
+.heading {
+  background-color: rgb(25, 25, 25);
+  text-align: center;
+  padding: 100px;
+}
+
+.heading h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 42px;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
+  h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  h5 {
+    width: 70%;
+  }
+
   #products, .non-flex {
     padding: 0;
   }
@@ -335,11 +359,6 @@ h5 {
     background-size: contain;
     max-width: 768px;
     height: 768px;
-  }
-
-  h2 {
-    font-size: 50px;
-    line-height: 50px;
   }
 
   #speaker-9 {
@@ -391,10 +410,6 @@ h5 {
     align-items: center;
   }
 
-  h5 {
-    width: 70%;
-  }
-
   #advert-image {
     background-image: url('../assets/shared/tablet/image-best-gear.jpg');
     height: 300px;
@@ -403,6 +418,28 @@ h5 {
 
 /* desktop mode */
 @media (min-width: 1440px) {
+  h2 {
+    text-align: left;
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 40px;
+    line-height: 42px;
+    font-weight: 800;
+    width: 70%;
+  }
+
   #hero-container {
     margin-top: -50px;
     z-index: 0;
@@ -418,17 +455,6 @@ h5 {
   #hero .flex-container {
     align-items: flex-start;
     margin:0;
-  }
-
-  h2 {
-    text-align: left;
-    font-size: 50px;
-    line-height: 50px;
-  }
-
-  h3 {
-    font-size: 30px;
-    line-height: 30px;
   }
 
   #hero p {
@@ -495,10 +521,6 @@ h5 {
     flex-basis: 33%;
   }
 
-  h4 {
-    font-size: 18px;
-  }
-
   #catalog div {
     font-size: 13px;
   }
@@ -520,13 +542,6 @@ h5 {
     justify-content: center;
     row-gap: 30px;
     text-align: left;
-  }
-  
-  h5 {
-    font-size: 40px;
-    line-height: 42px;
-    font-weight: 800;
-    width: 70%;
   }
   
   #advert p {

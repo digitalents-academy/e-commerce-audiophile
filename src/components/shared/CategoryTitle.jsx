@@ -1,6 +1,10 @@
 const CategoryTitle = ({ title }) => {
   return (
-    <div>{title}</div>
+    <div className="heading">
+      <h1>
+        {title}
+      </h1>
+    </div>
   )
 }
 
