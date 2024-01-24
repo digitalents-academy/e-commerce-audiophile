@@ -345,16 +345,17 @@ h5 {
 
 .more-gap {
   row-gap: 120px !important;
-  margin-top: 100px !important;
+  margin: 100px auto 250px auto !important;
 }
 
 .category-product {
   display: flex;
   flex-direction: row-reverse;
+  justify-content: space-between;
 }
 
-.category-product div {
-  flex-basis: 50%;
+.category-product div:last-child {
+  flex-basis:50%;
 }
 
 .category-product img {
@@ -370,6 +371,9 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-basis:40%;
+  align-items: baseline;
+  row-gap: 20px;
 }
 
 .product-details h4 {
@@ -393,6 +397,22 @@ h5 {
   font-size: 15px;
   max-width: 450px;
   line-height: 25px;
+}
+.product-details a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--orange);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 15px 23px;
+  white-space: nowrap;
+  transition: all 1s;
+}
+
+.product-details a:hover {
+  background-color: var(--light-orange);
 }
 
 /* tablet mode */
