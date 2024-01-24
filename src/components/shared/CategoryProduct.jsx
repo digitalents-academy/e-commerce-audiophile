@@ -1,11 +1,13 @@
-const CategoryProduct = ({ data, right }) => {
+import { Link } from "react-router-dom"
 
+const CategoryProduct = ({ data, right }) => {
   return (
-    <div>
+    <div className={"category-product " + (right ? "" : "category-odd")}>
       <div>
-      {data.new ? "New Product" : ""}
-      {data.name} {data.category}
-      {data.description}
+      <h4>{data.new ? "New Product" : ""}</h4>
+      <h3>{data.name} {data.category}</h3>
+      <p>{data.description}</p>
+      <Link to={data.link}>See Product</Link>
       </div>
       <picture>
         <source media="(min-width:768px) and (max-width:1440px)" srcSet={"../../assets/category-" + data.category + "/tablet/" + data.image} />
