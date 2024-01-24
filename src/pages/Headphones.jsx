@@ -33,7 +33,7 @@ const Headphones = () => {
   return (
     <>
       <CategoryTitle title="Headphones" />
-      <div id="products">
+      <div id="products" className='more-gap'>
         <CategoryProduct data={data[0]} right={true} />
         <CategoryProduct data={data[1]} right={false} />
         <CategoryProduct data={data[2]} right={true} />
