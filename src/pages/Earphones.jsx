@@ -1,6 +1,18 @@
+import Catalog from '../components/shared/Catalog'
+import Advert from '../components/shared/Advert'
+import CategoryTitle from '../components/shared/CategoryTitle'
+
 const Earphones = () => {
   return (
-    <h1>Hello world!</h1>
+    <>
+      <CategoryTitle title="Earphones" />
+    <div className='non-flex'>
+      <Catalog />
+    </div>
+    <div className='non-flex'>
+      <Advert />
+    </div>
+    </>
   )
 }
 
