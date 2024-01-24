@@ -3,7 +3,7 @@ import { Outlet, Link } from 'react-router-dom'
 
 const App = () => {
   const placeholder = {
-    backgroundColor: "black",
+    backgroundColor: "rgb(25, 25, 25)",
     textAlign: "center",
     width: "100%",
     color: "white",
