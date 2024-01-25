@@ -515,6 +515,48 @@ h5 {
   cursor: pointer;
 }
 
+.text-details {
+  display: flex;
+  flex-direction: row;
+}
+
+.text-details h4 {
+  text-align: left;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.text-details div {
+  flex-basis: 70%;
+}
+
+.text-details ul {
+  flex-basis: 30%;
+  list-style: none;
+  font-size: 18px;
+  color: var(--light-black);
+}
+
+.text-details li {
+  margin-bottom: 12px;
+}
+
+.orange-quantity {
+  color: var(--orange);
+  display: inline-block;
+  width: 40px;
+  font-weight: 700;
+}
+
+.text-details p {
+  color: var(--light-black);
+  font-size: 18px;
+  line-height: 28px;
+  max-width: 660px;
+  margin-bottom: 25px;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {

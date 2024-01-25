@@ -1,9 +1,13 @@
 const TextDetails = ({ features, box }) => {
   return (
-    <div>
+    <div className="text-details">
+      <div>
+        <h4>Features</h4>
       {features.map(feature => <p key={features.indexOf(feature)}>{feature}</p>)}
+      </div>
       <ul>
-        {box.map(item => <li key={item.item}>{item.quantity}x {item.item}</li>)}
+        <h4>In The Box</h4>
+        {box.map(item => <li key={item.item}><span className="orange-quantity">{item.quantity}x</span> {item.item}</li>)}
       </ul>
     </div>
   )
