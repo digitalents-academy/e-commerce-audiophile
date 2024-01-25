@@ -1,5 +1,5 @@
 import './styles/index.css'
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, ScrollRestoration } from 'react-router-dom'
 
 const App = () => {
   const placeholder = {
@@ -19,6 +19,7 @@ const App = () => {
       <Outlet />
     </div>
     <footer style={placeholder}>Placeholder Footer</footer>
+    <ScrollRestoration />
     </>
   )
 }
