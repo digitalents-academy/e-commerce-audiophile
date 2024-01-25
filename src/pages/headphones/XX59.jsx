@@ -45,7 +45,7 @@ const XX59Phone = () => {
         {
           name: "XX99 Mark I",
           url: "/headphones/xx99-mark-one-headphones",
-          image: "image-xx59-headphones.jpg"
+          image: "image-xx99-mark-two-headphones.jpg"
         },
         {
           name: "ZX9 Speaker",
