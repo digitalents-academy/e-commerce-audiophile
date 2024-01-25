@@ -1,13 +1,27 @@
+import { useState } from "react"
+
 const PhotoDetails = ({ imageFolder, name, isNew, price, description }) => {
+  const [quantity, setQuantity] = useState(1)
+
   const formattedPrice = price.toString().replace(/(?<=\d)(?=(\d\d\d)+(?!\d))/g, ",")
   return (
-    <div>
-      <img src={"../../../assets/" + imageFolder + "/desktop/image-product.jpg"} />
-      {isNew ? "New Product" : ""} <br />
-      {name} <br />
-      {description} <br />
-      $ {formattedPrice}
-      {/* TODO: product counter and add to cart button */}
+    <div className="photo-details">
+      <picture>
+        <source media="(min-width:768px) and (max-width:1440px)" srcSet={"../../../assets/" + imageFolder + "/tablet/image-product.jpg"} />
+        <source media="(min-width: 1440px)" srcSet={"../../../assets/" + imageFolder + "/desktop/image-product.jpg"} />
+        <img src={"../../../assets/" + imageFolder + "/mobile/image-product.jpg"} />
+      </picture>
+      <div>
+        <h4>{isNew ? "New Product" : ""}</h4>
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <h6>$ {formattedPrice}</h6>
+      <div>
+        <button className="number-buttons" onClick={() => (quantity === 1 ? "" : setQuantity(quantity -1))}>-</button>
+        <span id="quantity-number">{quantity}</span>
+        <button className="number-buttons" onClick={() => (quantity > 9 ? "" : setQuantity(quantity + 1))}>+</button>
+        <button>Add to Cart</button></div>
+      </div>
     </div>
   )
 }
