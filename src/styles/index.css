@@ -517,12 +517,13 @@ h5 {
 
 .text-details {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  row-gap: 40px;
 }
 
 .text-details h4 {
   text-align: left;
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -647,6 +648,10 @@ h5 {
     flex-direction: row;
     margin-top: -80px;
     column-gap: 50px;
+  }
+
+  .text-details p {
+    max-width: none;
   }
 }
 
@@ -849,5 +854,14 @@ h5 {
   .photo-details h3 {
     font-size: 40px;
     line-height: 48px;
+  }
+
+  .text-details {
+    flex-direction: row;
+  }
+  
+  .text-details h4 {
+    font-size: 34px;
+    margin-bottom: 20px;
   }
 }
