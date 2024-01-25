@@ -61,7 +61,7 @@ const XX99Mark2 = () => {
     <>
       <div id="products" className="more-gap">
         <BackButton />
-        <PhotoDetails imageFolder={data.imageFolder} name={data.name} new={data.new} price={data.price} description={data.description} />
+        <PhotoDetails imageFolder={data.imageFolder} name={data.name} isNew={data.new} price={data.price} description={data.description} />
         <TextDetails features={data.features} box={data.box} />
         <PhotoGrid data={data.imageFolder} />
         <OtherProducts data={data.others} />
