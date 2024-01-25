@@ -54,7 +54,7 @@ const XX99Mark2 = () => {
           image: "image-zx9-speaker.jpg"
         }
       ]
-    }
+  }
 
 
   return (
