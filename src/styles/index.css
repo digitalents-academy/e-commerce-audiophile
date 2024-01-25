@@ -412,6 +412,21 @@ h5 {
   background-color: var(--light-orange);
 }
 
+/* product page */
+#back-button {
+  background-color: transparent;
+  border: none;
+  align-self: flex-start;
+  color: var(--light-black);
+  font-size: 16px;
+  font-family: 'Manrope', sans-serif;
+}
+
+#back-button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {
