@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import facebook from "../../../assets/shared/desktop/icon-facebook.svg";
 import twitter from "../../../assets/shared/desktop/icon-twitter.svg";
@@ -12,7 +11,7 @@ const Footer = () => {
             <div className="footer-content">
                 <div className="info">
                     <div className="title">audiophile</div>
-                    <div className="description">Audiophile is an all in one stop to fulfill your audio needs. We're a small team for music lovers and sound specialists who are devoted to help you get the most out of personal audio. Come and visit our demo facility - we're open 7 days of a week.</div>
+                    <div className="description">Audiophile is an all in one stop to fulfill your audio needs. We’re a small team for music lovers and sound specialists who are devoted to help you get the most out of personal audio. Come and visit our demo facility - we’re open 7 days of a week.</div>
                     <div className="copyright">Copyright 2021. All Rights Reserved</div>
                 </div>
                 <div className="links-logos">
