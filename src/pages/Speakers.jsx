@@ -1,7 +1,7 @@
 import Catalog from '../components/shared/Catalog'
 import Advert from '../components/shared/Advert'
-import CategoryTitle from '../components/shared/CategoryTitle'
-import CategoryProduct from '../components/shared/CategoryProduct'
+import CategoryTitle from '../components/category-page/CategoryTitle'
+import CategoryProduct from '../components/category-page/CategoryProduct'
 
 const Speakers = () => {
   const data = [

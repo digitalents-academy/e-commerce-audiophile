@@ -1,7 +1,7 @@
-import { Outlet } from 'react-router-dom'
 import Header from "./components/shared/Header"
 import Footer from './components/shared/Footer'
 import './styles/index.css'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 
 const App = () => {
 
@@ -12,6 +12,7 @@ const App = () => {
         <Outlet />
       </div>
       <Footer />
+      <ScrollRestoration />
     </div>
   )
 }
