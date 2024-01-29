@@ -9,7 +9,7 @@ const header = () => {
             <div className="header-content">
                 <div className="logo">
                     <Link to="/" className="header-label">
-                        audiophile
+                    <img src='../../../assets/shared/desktop/logo.svg' />
                     </Link>
                 </div>
                 <div className="links">
