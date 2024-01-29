@@ -590,6 +590,55 @@ h5 {
   grid-area: three
 }
 
+/* other products area */
+
+#other-products {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.product-flex {
+  display: flex;
+  flex-direction: row;
+  column-gap: 30px;
+  text-align: center;
+}
+
+.product-flex h5 {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.product-flex img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.product-flex a {
+  font-family: 'Manrope', sans-serif;
+  border:none;
+  text-decoration: none;
+  color: white;
+  background-color: var(--orange);
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 16px 23px 16px 23px;
+  white-space: nowrap;
+  transition: all 1s;
+}
+
+.product-flex a:hover {
+  background-color: var(--light-orange);
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {
