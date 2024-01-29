@@ -601,8 +601,8 @@ h5 {
 
 .product-flex {
   display: flex;
-  flex-direction: row;
-  column-gap: 30px;
+  flex-direction: column;
+  row-gap: 50px;
   text-align: center;
 }
 
@@ -742,6 +742,13 @@ h5 {
     grid-template-areas: 
     "one three"
     "two three";
+  }
+
+  .product-flex {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    text-align: center;
   }
 }
 
@@ -962,5 +969,12 @@ h5 {
     grid-template-areas: 
     "one three"
     "two three";
+  }
+
+  .product-flex {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    text-align: center;
   }
 }
