@@ -37,9 +37,22 @@ const App = () => {
       cartImage: itemData.cartImage,
       quantity: quantity
     }
-    const newCart = cart.concat(newItem)
-    setCart(newCart)
-    localStorage.setItem("cart", JSON.stringify(newCart))
+    if (cart.some(e => e.shortName === newItem.shortName)) {
+      const newCart = cart.map(item => {
+        if (item.shortName === newItem.shortName) {
+          item.quantity = item.quantity + quantity
+          return item
+        } else {
+          return item
+        }
+      })
+      setCart(newCart)
+      localStorage.setItem("cart", JSON.stringify(newCart))
+    } else {
+      const newCart = cart.concat(newItem)
+      setCart(newCart)
+      localStorage.setItem("cart", JSON.stringify(newCart))
+    }
   }
 
   return (
