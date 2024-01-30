@@ -41,3 +41,7 @@
     color: white;
     letter-spacing: 2px;
 }
+
+.cart:hover {
+  cursor: pointer;
+}
