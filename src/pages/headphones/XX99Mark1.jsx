@@ -52,7 +52,7 @@ const XX99Mark1 = () => {
           url: "/speakers/zx9-speakers",
           image: "image-zx9-speaker.jpg"
         }
-      ]
+      ], 
   }
 
 
