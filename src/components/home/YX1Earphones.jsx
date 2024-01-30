@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 const YX1Earphones = () => {
   return (
     <div id="earphones-1">
@@ -5,7 +7,7 @@ const YX1Earphones = () => {
       </div>
       <div className="flex-container">
       <h3>YX1 earphones</h3>
-      <a href="/">See product</a>
+      <Link to="/earphones/yx1-earphones">See product</Link>
       </div>
     </div>
   )
