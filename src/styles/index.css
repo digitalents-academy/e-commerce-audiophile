@@ -655,9 +655,14 @@ h5 {
   top: 150px;
   right: 300px;
   background-color: white;
-  padding: 40px 100px;
   border-radius: 10px;
   text-align: center;
+  min-width: 350px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+
+  /* TODO: center text & icon with flex */
 }
 
 .shopping-cart h6 {
@@ -679,6 +684,11 @@ h5 {
 
 .pointer-event {
   pointer-events: none;
+}
+
+.shopping-cart h5 {
+  font-size: 17px;
+  width: auto;
 }
 
 /* tablet mode */
