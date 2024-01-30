@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import iconcart from "../../../assets/shared/desktop/icon-cart.svg"
 import "../../styles/Header.css"
 
-const header = () => {
+const Header = (props) => {
 
     return (
         <div className="header-main">
@@ -18,7 +18,7 @@ const header = () => {
                     <Link to={`/speakers`} className='link'>SPEAKERS</Link>
                     <Link to={`/earphones`} className='link'>EARPHONES</Link>
                 </div>
-                <div className="cart">
+                <div className="cart" onClick={props.onClick}>
                     <img src={iconcart} className="icon" alt="" />
                 </div>
             </div>
@@ -26,4 +26,4 @@ const header = () => {
     );
 }
 
-export default header;
+export default Header;

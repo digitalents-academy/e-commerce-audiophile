@@ -639,6 +639,40 @@ h5 {
   background-color: var(--light-orange);
 }
 
+/* shopping cart */
+.cart-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.3);
+  position: absolute;
+  z-index: 2;
+}
+
+.shopping-cart {
+  position: absolute;
+  top: 150px;
+  right: 300px;
+  background-color: white;
+  padding: 40px 100px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.shopping-cart h6 {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--light-black);
+  margin-bottom: 30px;
+}
+
+.cart-open {
+  overflow: hidden;
+  height: 100vh;
+}
+.cart-hidden {
+  display: none;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {
