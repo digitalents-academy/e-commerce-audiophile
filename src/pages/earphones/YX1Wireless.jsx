@@ -6,6 +6,7 @@ import TextDetails from "../../components/product-page/TextDetails"
 
 import Catalog from "../../components/shared/Catalog"
 import Advert from "../../components/shared/Advert"
+import { useOutletContext } from "react-router-dom"
 
 const YX1Wireless = () => {
   const data = {
@@ -56,7 +57,12 @@ const YX1Wireless = () => {
           url: "/speakers/zx9-speakers",
           image: "image-zx9-speaker.jpg"
         }
-      ]
+      ],
+      cartData: {
+        shortName: "YX1",
+        cartImage: "image-yx1-earphones.jpg",
+        price: 599
+      }
   }
 
 
@@ -64,7 +70,7 @@ const YX1Wireless = () => {
     <>
       <div id="products" className="more-gap">
         <BackButton />
-        <PhotoDetails imageFolder={data.imageFolder} name={data.name} isNew={data.new} price={data.price} description={data.description} />
+        <PhotoDetails imageFolder={data.imageFolder} name={data.name} isNew={data.new} price={data.price} description={data.description} addToCart={useOutletContext()} cartData={data.cartData} />
         <TextDetails features={data.features} box={data.box} />
         <PhotoGrid imageFolder={data.imageFolder} />
         <OtherProducts data={data.others} />
