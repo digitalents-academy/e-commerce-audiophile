@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 const Cart = (props) => {
   const [totalQuantity, setTotalQuantity] = useState()
@@ -10,6 +11,10 @@ const Cart = (props) => {
       setTotalPrice(props.cart.reduce((a, b) => a + (b.quantity * b.price), 0))
     }
   }, [props.cart])
+
+  const formatPrice = price => {
+    return price.toString().replace(/(?<=\d)(?=(\d\d\d)+(?!\d))/g, ",")
+  }
 
   if (props.cart.length < 1) {
     return (
@@ -25,12 +30,19 @@ const Cart = (props) => {
   }
   return (
     <div className={"cart-background " + (props.isHidden ? "cart-hide pointer-event" : null)} onClick={props.onClick}>
-    <div className={"shopping-cart"}>
-      Cart ({totalQuantity}) Remove all <br />
-      items <br />
-      total {totalPrice} <br />
-      Checkout
-    </div>
+      <div className={"shopping-cart"}>
+        <div>
+          <h5>Cart ({totalQuantity})</h5> <span>Remove All</span>
+        </div>
+        <div>
+          Items       
+        </div>
+        <div>
+          <span>Total</span>
+          <span>$ {formatPrice(totalPrice)}</span>
+        </div>
+        <Link to="/">Checkout</Link>
+      </div>
     </div>
   )
 }
