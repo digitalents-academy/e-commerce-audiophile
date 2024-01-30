@@ -1,6 +1,6 @@
 const Cart = (props) => {
   return (
-    <div className={"cart-background " + (props.isHidden ? "cart-hidden" : "")} onClick={props.onClick}>
+    <div className={"cart-background " + (props.isHidden ? "cart-hide pointer-event" : null)} onClick={props.onClick}>
     <div className={"shopping-cart"}>
       <h6>Your cart is empty</h6>
       <svg width="70px" height="70px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 20">

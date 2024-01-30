@@ -646,6 +646,8 @@ h5 {
   background-color: rgba(0,0,0,0.3);
   position: absolute;
   z-index: 2;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 .shopping-cart {
@@ -669,8 +671,14 @@ h5 {
   overflow: hidden;
   height: 100vh;
 }
-.cart-hidden {
-  display: none;
+
+.cart-hide {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.pointer-event {
+  pointer-events: none;
 }
 
 /* tablet mode */

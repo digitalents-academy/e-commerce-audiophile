@@ -15,8 +15,10 @@ const App = () => {
   }
 
   const cartOffClick = () => {
-    setMainStyle('')
-    setIsHidden(true)
+    if(!isHidden) {
+      setMainStyle('')
+      setIsHidden(true)
+    }
   }
 
   return (
