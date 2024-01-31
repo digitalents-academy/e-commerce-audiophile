@@ -81,9 +81,28 @@ const App = () => {
     localStorage.setItem("cart", JSON.stringify(newCart))
   }
 
+  const decreaseQuantity = (changedItem) => {
+    if (changedItem.quantity === 1) {
+      const newCart = cart.filter(item => item.shortName !== changedItem.shortName)
+      setCart(newCart)
+      localStorage.setItem("cart", JSON.stringify(newCart))
+    } else {
+      const newCart = cart.map(item => {
+        if (item.shortName === changedItem.shortName) {
+          item.quantity = item.quantity - 1
+          return item
+        } else {
+          return item
+        }
+      })
+      setCart(newCart)
+      localStorage.setItem("cart", JSON.stringify(newCart))
+    }
+  }
+
   return (
     <div className={'main ' + mainStyle}>
-      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} increaseQuantity={increaseQuantity} />
+      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
       <Header onClick={cartClick} totalQuantity={totalQuantity} />
       <div>
         <Outlet context={addToCart} />

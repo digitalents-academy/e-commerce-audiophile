@@ -15,7 +15,7 @@ const Items = (props) => {
             <div className="cart-name">{item.shortName}</div>
             <div className="cart-price">$ {formatPrice(item.price)}</div>
             <div className="cart-buttons">
-              <button>-</button><span id="quantity-cart">{item.quantity}</span><button onClick={() => props.increaseQuantity(item.shortName)}>+</button>
+              <button onClick={() => props.decreaseQuantity(item)}>-</button><span id="quantity-cart">{item.quantity}</span><button onClick={() => props.increaseQuantity(item.shortName)}>+</button>
             </div>
           </div>
         )
@@ -56,7 +56,7 @@ const Cart = (props) => {
           <h5>Cart ({totalQuantity})</h5> <button onClick={props.removeAll}>Remove All</button>
         </div>
         <div className="second-wrapper">
-          <Items cart={props.cart} increaseQuantity={props.increaseQuantity} />
+          <Items cart={props.cart} increaseQuantity={props.increaseQuantity} decreaseQuantity={props.decreaseQuantity} />
         </div>
         <div className="first-wrapper">
           <span id="total">Total</span>
