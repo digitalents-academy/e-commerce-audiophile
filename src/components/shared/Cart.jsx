@@ -10,10 +10,13 @@ const Items = (props) => {
     return (
       props.cart.map(item => {
         return (
-          <div key={item.shortName} className="">
-            <img src={"../../../assets/cart/" + item.cartImage} alt="" />
-            <span>{item.shortName}</span>
-            <span>$ {formatPrice(item.price)}</span>
+          <div key={item.shortName} className="cart-grid">
+            <img src={"../../../assets/cart/" + item.cartImage} alt="" className="cart-photo" />
+            <div className="cart-name">{item.shortName}</div>
+            <div className="cart-price">$ {formatPrice(item.price)}</div>
+            <div className="cart-buttons">
+              <button>-</button><span id="quantity-cart">{item.quantity}</span><button>+</button>
+            </div>
           </div>
         )
       })
@@ -52,7 +55,7 @@ const Cart = (props) => {
         <div className="first-wrapper">
           <h5>Cart ({totalQuantity})</h5> <button onClick={props.removeAll}>Remove All</button>
         </div>
-        <div>
+        <div className="second-wrapper">
           <Items cart={props.cart} />
         </div>
         <div className="first-wrapper">
