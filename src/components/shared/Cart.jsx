@@ -1,6 +1,26 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
+const formatPrice = price => {
+  return price.toString().replace(/(?<=\d)(?=(\d\d\d)+(?!\d))/g, ",")
+}
+
+const Items = (props) => {
+  if (props.cart.length > 0) {
+    return (
+      props.cart.map(item => {
+        return (
+          <div key={item.shortName}>
+            <img src={"../../../assets/cart/" + item.cartImage} alt="" />
+            <span>{item.shortName}</span>
+            <span>$ {formatPrice(item.price)}</span>
+          </div>
+        )
+      })
+    )
+  }
+}
+
 const Cart = (props) => {
   const [totalQuantity, setTotalQuantity] = useState(0)
   const [totalPrice, setTotalPrice] = useState(0)
@@ -11,10 +31,6 @@ const Cart = (props) => {
       setTotalPrice(props.cart.reduce((a, b) => a + (b.quantity * b.price), 0))
     }
   }, [props.cart])
-
-  const formatPrice = price => {
-    return price.toString().replace(/(?<=\d)(?=(\d\d\d)+(?!\d))/g, ",")
-  }
 
   if (props.cart.length < 1) {
     return (
@@ -29,21 +45,13 @@ const Cart = (props) => {
     )
   }
   return (
-    <div className={"cart-background " + (props.isHidden ? "cart-hide pointer-event" : null)} onClick={props.onClick}>
+    <div className={"cart-background " + (props.isHidden ? "cart-hide pointer-event" : "")} onClick={props.onClick}>
       <div className={"shopping-cart"}>
         <div className="first-wrapper">
-          <h5>Cart ({totalQuantity})</h5> <button>Remove All</button>
+          <h5>Cart ({totalQuantity})</h5> <button onClick={props.removeAll}>Remove All</button>
         </div>
         <div>
-          {props.cart.map(item => {
-            return (
-              <div key={item.shortName}>
-                <img src={"../../../assets/cart/" + item.cartImage} alt="" />
-                <span>{item.shortName}</span>
-                <span>$ {formatPrice(item.price)}</span>
-              </div>
-            )
-          })}      
+          <Items cart={props.cart} />
         </div>
         <div>
           <span>Total</span>

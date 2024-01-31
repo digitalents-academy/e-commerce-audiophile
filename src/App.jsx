@@ -54,10 +54,15 @@ const App = () => {
       localStorage.setItem("cart", JSON.stringify(newCart))
     }
   }
+  
+  const removeAll = () => {
+    localStorage.removeItem("cart")
+    setCart([])
+  }
 
   return (
     <div className={'main ' + mainStyle}>
-      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} />
+      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} />
       <Header onClick={cartClick} />
       <div>
         <Outlet context={addToCart} />
