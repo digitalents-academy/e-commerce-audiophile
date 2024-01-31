@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
+import Checkout from './pages/Checkout.jsx'
 
 import Headphones from './pages/Headphones.jsx'
 import Earphones from './pages/Earphones.jsx'
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/earphones",
         element: <Earphones />
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       },
       {
         path: "/headphones/xx99-mark-two-headphones",
