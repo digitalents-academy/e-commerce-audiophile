@@ -641,9 +641,9 @@ h5 {
 
 /* shopping cart */
 .cart-background {
-  width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
   position: absolute;
   z-index: 2;
   opacity: 1;
@@ -661,15 +661,15 @@ h5 {
   min-height: 180px;
   display: flex;
   flex-direction: column;
-
-  /* TODO: center text & icon with flex */
+  align-items: center;
+  justify-content: center;
+  row-gap: 20px;
 }
 
 .shopping-cart h6 {
   font-size: 15px;
   font-weight: 500;
   color: var(--light-black);
-  margin-bottom: 30px;
 }
 
 .cart-open {
