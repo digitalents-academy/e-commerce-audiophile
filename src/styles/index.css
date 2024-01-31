@@ -645,7 +645,7 @@ h5 {
   width: 100%;
   background-color: rgba(0,0,0,0.5);
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   opacity: 1;
   transition: opacity 0.5s;
 }
@@ -665,6 +665,9 @@ h5 {
   justify-content: center;
   row-gap: 20px;
   padding: 30px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 2;
 }
 
 .shopping-cart h6 {
