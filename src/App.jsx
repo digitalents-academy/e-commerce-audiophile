@@ -68,9 +68,22 @@ const App = () => {
     setTotalQuantity(0)
   }
 
+  const increaseQuantity = (itemName) => {
+    const newCart = cart.map(item => {
+      if (item.shortName === itemName) {
+        item.quantity = item.quantity + 1
+        return item
+      } else {
+        return item
+      }
+    })
+    setCart(newCart)
+    localStorage.setItem("cart", JSON.stringify(newCart))
+  }
+
   return (
     <div className={'main ' + mainStyle}>
-      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} />
+      <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} increaseQuantity={increaseQuantity} />
       <Header onClick={cartClick} totalQuantity={totalQuantity} />
       <div>
         <Outlet context={addToCart} />
