@@ -657,13 +657,14 @@ h5 {
   background-color: white;
   border-radius: 10px;
   text-align: center;
-  min-width: 350px;
+  min-width: 300px;
   min-height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   row-gap: 20px;
+  padding: 30px;
 }
 
 .shopping-cart h6 {
@@ -689,6 +690,28 @@ h5 {
 .shopping-cart h5 {
   font-size: 17px;
   width: auto;
+  line-height: 17px;
+}
+
+.first-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.first-wrapper button {
+  background-color: transparent;
+  border: 0;
+  text-decoration: underline;
+  color: var(--light-black);
+  font-size: 15px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.first-wrapper button:hover {
+  cursor: pointer;
 }
 
 /* tablet mode */

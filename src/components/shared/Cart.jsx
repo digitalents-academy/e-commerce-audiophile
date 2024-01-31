@@ -2,8 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
 const Cart = (props) => {
-  const [totalQuantity, setTotalQuantity] = useState()
-  const [totalPrice, setTotalPrice] = useState()
+  const [totalQuantity, setTotalQuantity] = useState(0)
+  const [totalPrice, setTotalPrice] = useState(0)
 
   useEffect(() => {
     if (props.cart.length > 0) {
@@ -31,11 +31,19 @@ const Cart = (props) => {
   return (
     <div className={"cart-background " + (props.isHidden ? "cart-hide pointer-event" : null)} onClick={props.onClick}>
       <div className={"shopping-cart"}>
-        <div>
-          <h5>Cart ({totalQuantity})</h5> <span>Remove All</span>
+        <div className="first-wrapper">
+          <h5>Cart ({totalQuantity})</h5> <button>Remove All</button>
         </div>
         <div>
-          Items       
+          {props.cart.map(item => {
+            return (
+              <div key={item.shortName}>
+                <img src={"../../../assets/cart/" + item.cartImage} alt="" />
+                <span>{item.shortName}</span>
+                <span>$ {formatPrice(item.price)}</span>
+              </div>
+            )
+          })}      
         </div>
         <div>
           <span>Total</span>
