@@ -45,3 +45,21 @@
 .cart:hover {
   cursor: pointer;
 }
+
+.cart-indicator {
+  background-color: rgb(216, 125, 74);
+  color: white;
+  border-radius: 100%;
+  font-size: 11px;
+  line-height: 11px;
+  text-align: center;
+  width: 11px;
+  padding: 3px;
+  position: absolute;
+  margin-left: 15px;
+  margin-top: -7px;
+}
+
+.hidden {
+  display: none;
+}

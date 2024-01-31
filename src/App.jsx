@@ -9,6 +9,7 @@ const App = () => {
   const [mainStyle, setMainStyle] = useState("")
   const [isHidden, setIsHidden] = useState(true)
   const [cart, setCart] = useState([])
+  const [totalQuantity, setTotalQuantity] = useState(0)
 
   useEffect(() => {
     const jsonCart = localStorage.getItem("cart")
@@ -17,6 +18,12 @@ const App = () => {
       setCart(localCart)
     }
   }, [])
+
+  useEffect(() => {
+    if (cart.length > 0) {
+      setTotalQuantity(cart.reduce((a, b) => a + b.quantity, 0))
+    }
+  }, [cart])
 
   const cartClick = () => {
     setMainStyle('cart-open')
@@ -58,12 +65,13 @@ const App = () => {
   const removeAll = () => {
     localStorage.removeItem("cart")
     setCart([])
+    setTotalQuantity(0)
   }
 
   return (
     <div className={'main ' + mainStyle}>
       <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} />
-      <Header onClick={cartClick} />
+      <Header onClick={cartClick} totalQuantity={totalQuantity} />
       <div>
         <Outlet context={addToCart} />
       </div>

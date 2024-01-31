@@ -19,6 +19,7 @@ const Header = (props) => {
                     <Link to={`/earphones`} className='link'>EARPHONES</Link>
                 </div>
                 <div className="cart" onClick={props.onClick}>
+                  <div className={"cart-indicator " + (props.totalQuantity > 0 ? "" : "hidden")}>{props.totalQuantity > 0 ? props.totalQuantity : ""}</div>
                     <img src={iconcart} className="icon" alt="" />
                 </div>
             </div>
