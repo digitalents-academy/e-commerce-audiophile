@@ -729,6 +729,16 @@ h5 {
   cursor: pointer;
 }
 
+#total {
+  text-transform: uppercase;
+  color: var(--light-black);
+}
+
+#total-price {
+  font-weight: 700;
+  font-size: 17px;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {

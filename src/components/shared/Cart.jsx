@@ -55,9 +55,9 @@ const Cart = (props) => {
         <div>
           <Items cart={props.cart} />
         </div>
-        <div>
-          <span>Total</span>
-          <span>$ {formatPrice(totalPrice)}</span>
+        <div className="first-wrapper">
+          <span id="total">Total</span>
+          <span id="total-price">$ {formatPrice(totalPrice)}</span>
         </div>
         <Link to="/checkout">Checkout</Link>
       </div>
