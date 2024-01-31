@@ -11,6 +11,8 @@
   --dark-grey: rgba(255,255,255,0.5);
   --light-orange: rgb(251, 175, 133);
   --light-black: rgba(0, 0, 0, 0.5);
+  --toastify-color-success: #27823b !important;
+  --toastify-font-family: 'Manrope', sans-serif !important;
 }
 
 /* general styling */

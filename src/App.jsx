@@ -4,6 +4,8 @@ import Cart from "./components/shared/Cart"
 import './styles/index.css'
 import { Outlet, ScrollRestoration } from 'react-router-dom'
 import { useState, useEffect } from "react"
+import { ToastContainer, toast, Zoom } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
   const [mainStyle, setMainStyle] = useState("")
@@ -37,7 +39,7 @@ const App = () => {
     }
   }
 
-  const addToCart = (itemData, quantity) => {
+  const addToCart = (itemData, quantity, longName) => {
     const newItem = {
       shortName: itemData.shortName,
       price: itemData.price,
@@ -60,12 +62,14 @@ const App = () => {
       setCart(newCart)
       localStorage.setItem("cart", JSON.stringify(newCart))
     }
+    toast.success('Item "' + longName + '" was added to cart')
   }
   
   const removeAll = () => {
     localStorage.removeItem("cart")
     setCart([])
     setTotalQuantity(0)
+    toast.success("All items removed from cart")
   }
 
   const increaseQuantity = (itemName) => {
@@ -105,6 +109,19 @@ const App = () => {
     <div className={'main ' + mainStyle}>
       <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
       <Header onClick={cartClick} totalQuantity={totalQuantity} />
+      <ToastContainer
+        position="top-left"
+        autoClose={2500}
+        hideProgressBar
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover={false}
+        theme="colored"
+        transition={Zoom}
+      />
       <div>
         <Outlet context={addToCart} />
       </div>
