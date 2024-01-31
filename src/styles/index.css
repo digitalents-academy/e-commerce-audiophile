@@ -676,6 +676,18 @@ h5 {
   color: var(--light-black);
 }
 
+.shopping-cart a {
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  background-color: var(--orange);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 0;
+  letter-spacing: 1px;
+}
+
 .cart-open {
   overflow: hidden;
   height: 100vh;

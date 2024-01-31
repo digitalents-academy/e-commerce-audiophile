@@ -10,7 +10,7 @@ const Items = (props) => {
     return (
       props.cart.map(item => {
         return (
-          <div key={item.shortName}>
+          <div key={item.shortName} className="">
             <img src={"../../../assets/cart/" + item.cartImage} alt="" />
             <span>{item.shortName}</span>
             <span>$ {formatPrice(item.price)}</span>
@@ -59,7 +59,7 @@ const Cart = (props) => {
           <span>Total</span>
           <span>$ {formatPrice(totalPrice)}</span>
         </div>
-        <Link to="/">Checkout</Link>
+        <Link to="/checkout">Checkout</Link>
       </div>
       </>
   )
