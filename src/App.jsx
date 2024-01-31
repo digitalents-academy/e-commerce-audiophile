@@ -86,6 +86,7 @@ const App = () => {
       const newCart = cart.filter(item => item.shortName !== changedItem.shortName)
       setCart(newCart)
       localStorage.setItem("cart", JSON.stringify(newCart))
+      setTotalQuantity(0)
     } else {
       const newCart = cart.map(item => {
         if (item.shortName === changedItem.shortName) {
