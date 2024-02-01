@@ -2,7 +2,7 @@ import BackButton from "../components/product-page/BackButton"
 
 const Checkout = () => {
   return (
-    <div>
+    <div id="checkout">
       <BackButton />
     </div>
   )

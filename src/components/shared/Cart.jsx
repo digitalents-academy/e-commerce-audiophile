@@ -62,7 +62,7 @@ const Cart = (props) => {
           <span id="total">Total</span>
           <span id="total-price">$ {formatPrice(totalPrice)}</span>
         </div>
-        <Link to="/checkout">Checkout</Link>
+        <Link to="/checkout" onClick={props.onClick}>Checkout</Link>
       </div>
       </>
   )
