@@ -828,15 +828,21 @@ h5 {
 .checkout-flex {
   display: flex;
   width: 100%;
-  column-gap: 40px;
+  column-gap: 35px;
   margin-top: 30px;
 }
 
 .form {
   background-color: white;
   flex-basis: 70%;
-  padding: 30px;
+  padding: 40px;
   border-radius: 10px;
+}
+.form h2 {
+  color: black;
+  font-size: 25px;
+  letter-spacing: 0px;
+  line-height: 25px;
 }
 
 .summary {
