@@ -892,6 +892,10 @@ input[type=text]:focus {
   border: 1px solid var(--orange);
 }
 
+input[type=text]::placeholder {
+  color: #c8c8c8;
+}
+
 .form-flex {
   display: flex;
   width: 100%;

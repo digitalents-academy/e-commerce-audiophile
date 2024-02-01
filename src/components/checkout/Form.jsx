@@ -8,16 +8,16 @@ const Form = ({ handleChange }) => {
           <div className="form-flex">
             <div className="form-half">
           <label>Name</label>
-          <input type="text" name="name" onChange={handleChange}/>
+          <input type="text" name="name" onChange={handleChange}  placeholder="Alexei Ward"/>
             </div>
             <div className="form-half">
           <label>Email Address</label>
-          <input type="text" name="email" />
+          <input type="text" name="email" placeholder="alexei@mail.com" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Phone Number</label>
-          <input type="text" name="number" />
+          <input type="text" name="number" placeholder="+1 202-555-0136" />
           </div>
           </div>
         </fieldset>
@@ -26,21 +26,21 @@ const Form = ({ handleChange }) => {
           <div className="form-flex">
           <div className="form-full">
           <label>Your Address</label>
-          <input type="text" name="address" />
+          <input type="text" name="address" placeholder="1137 Williams Avenue" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>ZIP Code</label>
-          <input type="text" name="zip" />
+          <input type="text" name="zip" placeholder="10001" />
           </div>
           <div className="form-half">
           <label>City</label>
-          <input type="text" name="city" />
+          <input type="text" name="city" placeholder="New York" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Country</label>
-          <input type="text" name="country" />
+          <input type="text" name="country" placeholder="United States" />
           </div>
           </div>
         </fieldset>
@@ -51,19 +51,19 @@ const Form = ({ handleChange }) => {
           <label>Payment Method</label>
             </div>
             <div className="form-half">
-            <label><input type="radio" name="" id="" />
+            <label><input type="radio" name="payment" id="" checked/>
           e-Money</label>
-          <label><input type="radio" name="" id="" />
+          <label><input type="radio" name="payment" id="" />
           Cash on Delivery</label>
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>e-Money Number</label>
-          <input type="text" name="eMoneyNumber" />
+          <input type="text" name="eMoneyNumber" placeholder="238521993" />
           </div>
           <div className="form-half">
           <label>e-Money PIN</label>
-          <input type="text" name="eMoneyPin" />
+          <input type="text" name="eMoneyPin" placeholder="6891" />
           </div>
           </div>
         </fieldset>
