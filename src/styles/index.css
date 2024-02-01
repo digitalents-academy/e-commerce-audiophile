@@ -864,6 +864,7 @@ legend {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
+  margin-bottom: 20px;
 }
 
 label {
@@ -884,11 +885,11 @@ input[type=text] {
   line-height: 14px;
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
+  outline: 2px solid transparent;
 }
 
-.input[type=text]:focus {
+input[type=text]:focus {
   border: 1px solid var(--orange);
-  
 }
 
 .form-flex {

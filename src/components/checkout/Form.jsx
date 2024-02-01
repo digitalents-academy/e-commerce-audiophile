@@ -1,4 +1,4 @@
-const Form = () => {
+const Form = ({ handleChange }) => {
   return (
     <div className="form">
       <h2>Checkout</h2>
@@ -8,16 +8,16 @@ const Form = () => {
           <div className="form-flex">
             <div className="form-half">
           <label>Name</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="name" onChange={handleChange}/>
             </div>
             <div className="form-half">
           <label>Email Address</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="email" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Phone Number</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="number" />
           </div>
           </div>
         </fieldset>
@@ -26,21 +26,21 @@ const Form = () => {
           <div className="form-flex">
           <div className="form-full">
           <label>Your Address</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="address" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>ZIP Code</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="zip" />
           </div>
           <div className="form-half">
           <label>City</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="city" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Country</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="country" />
           </div>
           </div>
         </fieldset>
@@ -59,11 +59,11 @@ const Form = () => {
           <div className="break"></div>
           <div className="form-half">
           <label>e-Money Number</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="eMoneyNumber" />
           </div>
           <div className="form-half">
           <label>e-Money PIN</label>
-          <input type="text" name="" id="" />
+          <input type="text" name="eMoneyPin" />
           </div>
           </div>
         </fieldset>
