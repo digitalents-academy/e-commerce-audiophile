@@ -23,11 +23,19 @@ const Checkout = () => {
     setFormData({...formData, [e.target.name]: e.target.value })
   }
 
+  const handleMethod = (e) => {
+    if (e.target.id === "emoney") {
+      setFormData({...formData, eMoney: true })
+    } else {
+      setFormData({...formData, eMoney: false })
+    }
+  }
+
   return (
     <div id="checkout">
       <BackButton />
       <div className="checkout-flex">
-      <Form handleChange={handleChange} />
+      <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney}/>
       <Summary />
       </div>
       <Success />

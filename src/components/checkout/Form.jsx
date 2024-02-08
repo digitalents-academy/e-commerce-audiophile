@@ -1,4 +1,29 @@
-const Form = ({ handleChange }) => {
+const Payment = ({ handleChange, checkedState }) => {
+  if (checkedState) {
+    return (
+      <>
+      <div className="form-half">
+      <label>e-Money Number</label>
+      <input type="text" name="eMoneyNumber" onChange={handleChange} placeholder="238521993" />
+      </div>
+      <div className="form-half">
+      <label>e-Money PIN</label>
+      <input type="text" name="eMoneyPin" onChange={handleChange} placeholder="6891" />
+      </div>
+      </>
+    )
+  } else {
+    return (
+      <div className="form-full">
+        <p>
+        The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+        </p>
+      </div>
+    )
+  }
+}
+
+const Form = ({ handleChange, handleMethod, checkedState }) => {
   return (
     <div className="form">
       <h2>Checkout</h2>
@@ -12,12 +37,12 @@ const Form = ({ handleChange }) => {
             </div>
             <div className="form-half">
           <label>Email Address</label>
-          <input type="text" name="email" placeholder="alexei@mail.com" />
+          <input type="text" name="email" onChange={handleChange} placeholder="alexei@mail.com" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Phone Number</label>
-          <input type="text" name="number" placeholder="+1 202-555-0136" />
+          <input type="text" name="number" onChange={handleChange} placeholder="+1 202-555-0136" />
           </div>
           </div>
         </fieldset>
@@ -26,21 +51,21 @@ const Form = ({ handleChange }) => {
           <div className="form-flex">
           <div className="form-full">
           <label>Your Address</label>
-          <input type="text" name="address" placeholder="1137 Williams Avenue" />
+          <input type="text" name="address" onChange={handleChange} placeholder="1137 Williams Avenue" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>ZIP Code</label>
-          <input type="text" name="zip" placeholder="10001" />
+          <input type="text" name="zip" onChange={handleChange} placeholder="10001" />
           </div>
           <div className="form-half">
           <label>City</label>
-          <input type="text" name="city" placeholder="New York" />
+          <input type="text" name="city" onChange={handleChange} placeholder="New York" />
           </div>
           <div className="break"></div>
           <div className="form-half">
           <label>Country</label>
-          <input type="text" name="country" placeholder="United States" />
+          <input type="text" name="country" onChange={handleChange} placeholder="United States" />
           </div>
           </div>
         </fieldset>
@@ -51,21 +76,16 @@ const Form = ({ handleChange }) => {
           <label>Payment Method</label>
             </div>
             <div className="form-half">
-            <label><input type="radio" name="payment" id="" checked/>
-          e-Money</label>
-          <label><input type="radio" name="payment" id="" />
-          Cash on Delivery</label>
+            <label className="money-radio" id="emoney" onClick={handleMethod}><input type="radio" name="payment" id="emoney" checked />
+            <div className="radio-ring">{checkedState ? <div className="radio-checked"></div> : ""}</div>
+               e-Money</label>
+          <label className="money-radio" id="cash" onClick={handleMethod}><input type="radio" name="payment" id="cash" />
+          <div className="radio-ring">{!checkedState ? <div className="radio-checked"></div> : ""}</div>
+              Cash on Delivery</label>
           </div>
           <div className="break"></div>
-          <div className="form-half">
-          <label>e-Money Number</label>
-          <input type="text" name="eMoneyNumber" placeholder="238521993" />
-          </div>
-          <div className="form-half">
-          <label>e-Money PIN</label>
-          <input type="text" name="eMoneyPin" placeholder="6891" />
-          </div>
-          </div>
+          <Payment checkedState={checkedState} handleChange={handleChange} />
+        </div>
         </fieldset>
       </form>
     </div>
