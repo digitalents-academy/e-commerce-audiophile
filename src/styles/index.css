@@ -926,6 +926,10 @@ input[type=text]::placeholder {
   color: #c8c8c8;
 }
 
+.input-error {
+  border: 1px solid rgb(205, 44, 44) !important;
+}
+
 .form-flex {
   display: flex;
   width: 100%;

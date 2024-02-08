@@ -9,7 +9,7 @@ const Payment = ({ handleChange, checkedState, onBlur, errors }) => {
             <span className="error-message">{errors.eMoneyNumber}</span>
           ) : null}
           </div>
-      <input type="text" name="eMoneyNumber" onChange={handleChange} onBlur={onBlur} placeholder="238521993" />
+      <input type="text" name="eMoneyNumber" onChange={handleChange} onBlur={onBlur} placeholder="238521993" className={errors.eMoneyNumber ? "input-error" : ""} />
       </div>
       <div className="form-half">
       <div className="label-flex">
@@ -18,7 +18,7 @@ const Payment = ({ handleChange, checkedState, onBlur, errors }) => {
             <span className="error-message">{errors.eMoneyPin}</span>
           ) : null}
           </div>
-      <input type="text" name="eMoneyPin" onChange={handleChange} onBlur={onBlur} placeholder="6891" />
+      <input type="text" name="eMoneyPin" onChange={handleChange} onBlur={onBlur} placeholder="6891" className={errors.eMoneyPin ? "input-error" : ""} />
       </div>
       </>
     )
@@ -49,7 +49,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.name}</span>
           ) : null}
           </div>
-          <input type="text" name="name" onChange={handleChange} onBlur={validateForm} placeholder="Alexei Ward"/>
+          <input type="text" name="name" onChange={handleChange} onBlur={validateForm} placeholder="Alexei Ward" className={errors.name ? "input-error" : ""} />
             </div>
             <div className="form-half">
             <div className="label-flex">
@@ -58,7 +58,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.email}</span>
           ) : null}
           </div>
-          <input type="text" name="email" onChange={handleChange} onBlur={validateForm} placeholder="alexei@mail.com" />
+          <input type="text" name="email" onChange={handleChange} onBlur={validateForm} placeholder="alexei@mail.com" className={errors.email ? "input-error" : ""} />
           </div>
           <div className="break"></div>
           <div className="form-half">
@@ -68,7 +68,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.number}</span>
           ) : null}
           </div>
-          <input type="text" name="number" onChange={handleChange} onBlur={validateForm} placeholder="+1 202-555-0136" />
+          <input type="text" name="number" onChange={handleChange} onBlur={validateForm} placeholder="+1 202-555-0136" className={errors.number ? "input-error" : ""} />
           </div>
           </div>
         </fieldset>
@@ -82,7 +82,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.address}</span>
           ) : null}
           </div>
-          <input type="text" name="address" onChange={handleChange} onBlur={validateForm} placeholder="1137 Williams Avenue" />
+          <input type="text" name="address" onChange={handleChange} onBlur={validateForm} placeholder="1137 Williams Avenue" className={errors.address ? "input-error" : ""} />
           </div>
           <div className="break"></div>
           <div className="form-half">
@@ -92,7 +92,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.zip}</span>
           ) : null}
           </div>
-          <input type="text" name="zip" onChange={handleChange} onBlur={validateForm} placeholder="10001" />
+          <input type="text" name="zip" onChange={handleChange} onBlur={validateForm} placeholder="10001" className={errors.zip ? "input-error" : ""} />
           </div>
           <div className="form-half">
           <div className="label-flex">
@@ -101,7 +101,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.city}</span>
           ) : null}
           </div>
-          <input type="text" name="city" onChange={handleChange} onBlur={validateForm} placeholder="New York" />
+          <input type="text" name="city" onChange={handleChange} onBlur={validateForm} placeholder="New York" className={errors.city ? "input-error" : ""} />
           </div>
           <div className="break"></div>
           <div className="form-half">
@@ -111,7 +111,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             <span className="error-message">{errors.country}</span>
           ) : null}
           </div>
-          <input type="text" name="country" onChange={handleChange} onBlur={validateForm} placeholder="United States" />
+          <input type="text" name="country" onChange={handleChange} onBlur={validateForm} placeholder="United States" className={errors.country ? "input-error" : ""} />
           </div>
           </div>
         </fieldset>
