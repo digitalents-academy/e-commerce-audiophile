@@ -888,7 +888,19 @@ legend {
 label {
   font-size: 12px;
   font-weight: 700;
-  display: block;
+  display: inline-block;
+}
+
+.error-message {
+  display: inline-block;
+  color: rgb(205, 44, 44);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.label-flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 input[type=text] {

@@ -102,7 +102,7 @@ const Checkout = () => {
     <div id="checkout">
       <BackButton />
       <div className="checkout-flex">
-      <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} />
+      <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} errors={errors} />
       <Summary cart={cart} />
       </div>
       <Success />
