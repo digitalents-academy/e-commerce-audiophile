@@ -956,6 +956,16 @@ input[type=radio] {
   border-radius: 100%;
 }
 
+.cash-delivery {
+  display: flex;
+  color: var(--light-black);
+  font-size: 15px;
+  column-gap: 40px;
+  line-height: 25px;
+  margin-top: 10px;
+  align-items: center;
+}
+
 /* tablet mode */
 @media (min-width:768px) and (max-width:1440px) {
   h2 {

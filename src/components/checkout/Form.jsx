@@ -14,7 +14,8 @@ const Payment = ({ handleChange, checkedState }) => {
     )
   } else {
     return (
-      <div className="form-full">
+      <div className="form-full cash-delivery">
+        <img src="../../../assets/checkout/icon-cash-on-delivery.svg" alt="" />
         <p>
         The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
         </p>
@@ -76,7 +77,7 @@ const Form = ({ handleChange, handleMethod, checkedState }) => {
           <label>Payment Method</label>
             </div>
             <div className="form-half">
-            <label className="money-radio" id="emoney" onClick={handleMethod}><input type="radio" name="payment" id="emoney" checked />
+            <label className="money-radio" id="emoney" onClick={handleMethod}><input type="radio" name="payment" id="emoney" defaultChecked={true} />
             <div className="radio-ring">{checkedState ? <div className="radio-checked"></div> : ""}</div>
                e-Money</label>
           <label className="money-radio" id="cash" onClick={handleMethod}><input type="radio" name="payment" id="cash" />
