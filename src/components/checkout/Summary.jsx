@@ -7,7 +7,18 @@ const formatPrice = price => {
 const Items = (props) => {
   if (props.cart.length > 0) {
     return (
-      <p>Cart</p>
+      props.cart.map(item => {
+        return (
+          <div key={item.shortName} className="cart-grid">
+            <img src={"../../../assets/cart/" + item.cartImage} alt="" className="cart-photo" />
+            <div className="cart-name">{item.shortName}</div>
+            <div className="cart-price">$ {formatPrice(item.price)}</div>
+            <div className="cart-buttons">
+              <span id="quantity-summary">x{item.quantity}</span>
+            </div>
+          </div>
+        )
+      })
     )
   } else {
     return (

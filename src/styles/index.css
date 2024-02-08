@@ -752,7 +752,7 @@ h5 {
 .cart-grid {
   display: grid;
   column-gap: 10px;
-  row-gap: 5px;
+  row-gap: 7px;
   grid-template-columns: 70px 100px 100px;
   grid-template-areas:
   "photo name button"
@@ -852,10 +852,19 @@ h5 {
   flex-basis: 30%;
   padding: 30px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 20px;
 }
 
 .summary h3 {
   font-size: 18px;
+}
+
+#quantity-summary {
+  font-weight: 700;
+  color: var(--light-black);
 }
 
 fieldset {
