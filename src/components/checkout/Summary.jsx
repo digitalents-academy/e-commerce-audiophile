@@ -48,10 +48,27 @@ const Summary = (props) => {
     <div className="summary">
       <h3>Summary</h3>
       <Items cart={props.cart} />
-      <p>Total: $ {formatPrice(total)}</p>
-      <p>Shipping: $ {shipping}</p>
-      <p>VAT (Included): $ {formatPrice(vat)}</p>
-      <p>Grand Total: $ {formatPrice(grandTotal)}</p>
+      <div>
+      <div className="first-wrapper">
+          <span id="total">Total</span>
+          <span id="total-price">$ {formatPrice(total)}</span>
+      </div>
+      <div className="first-wrapper">
+          <span id="total">Shipping</span>
+          <span id="total-price">$ 50</span>
+        </div>
+        <div className="first-wrapper">
+          <span id="total">VAT (Included)</span>
+          <span id="total-price">$ {formatPrice(vat)}</span>
+        </div>
+      </div>
+        <div className="first-wrapper">
+          <span id="total">Grand Total</span>
+          <span id="total-price" className="orange">$ {formatPrice(grandTotal)}</span>
+        </div>
+        <div>
+          <button className="continue-button">Continue & Pay</button>
+        </div>
     </div>
   )
 }

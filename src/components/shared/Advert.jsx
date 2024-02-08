@@ -2,7 +2,7 @@ const Advert = () => {
   return (
     <div id="advert">
       <div>
-        <h5>Bringing you the <span id="orange">best</span> audio gear</h5>
+        <h5>Bringing you the <span className="orange">best</span> audio gear</h5>
         <p>
           Located at the heart of New York City, Audiophile is the premier store
           for high end headphones, earphones, speakers, and audio accessories.

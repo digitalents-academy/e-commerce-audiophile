@@ -317,7 +317,7 @@ h5 {
   font-weight: 500;
 }
 
-#orange {
+.orange {
   color: var(--orange);
 }
 
@@ -978,6 +978,20 @@ input[type=radio] {
   line-height: 25px;
   margin-top: 10px;
   align-items: center;
+}
+
+.continue-button {
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  background-color: var(--orange);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 13px 0;
+  letter-spacing: 1px;
+  font-family: 'Manrope', sans-serif;
+  border: 0;
 }
 
 /* tablet mode */
