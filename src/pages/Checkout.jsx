@@ -3,8 +3,10 @@ import Form from "../components/checkout/Form"
 import Success from "../components/checkout/Success"
 import Summary from "../components/checkout/Summary"
 import { useState } from "react"
+import { useOutletContext } from "react-router-dom"
 
 const Checkout = () => {
+  const { cart } = useOutletContext()
 
   const [formData, setFormData] = useState({
     name: "",
@@ -35,8 +37,8 @@ const Checkout = () => {
     <div id="checkout">
       <BackButton />
       <div className="checkout-flex">
-      <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney}/>
-      <Summary />
+      <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} />
+      <Summary cart={cart} />
       </div>
       <Success />
     </div>

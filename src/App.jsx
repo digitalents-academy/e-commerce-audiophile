@@ -123,7 +123,9 @@ const App = () => {
         transition={Zoom}
       />
       <div>
-        <Outlet context={addToCart} />
+        <Outlet context={{
+          addToCart, cart, removeAll
+        }} />
       </div>
       <Footer />
       <ScrollRestoration />

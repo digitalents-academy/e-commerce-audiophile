@@ -9,6 +9,7 @@ import Advert from "../../components/shared/Advert"
 import { useOutletContext } from "react-router-dom"
 
 const ZX7Speakers = () => {
+  const { addToCart } = useOutletContext()
   const data = {
       imageFolder: "product-zx7-speaker",
       name: "ZX7 Speaker",
@@ -70,7 +71,7 @@ const ZX7Speakers = () => {
     <>
       <div id="products" className="more-gap">
         <BackButton />
-        <PhotoDetails imageFolder={data.imageFolder} name={data.name} isNew={data.new} price={data.price} description={data.description} addToCart={useOutletContext()} cartData={data.cartData} />
+        <PhotoDetails imageFolder={data.imageFolder} name={data.name} isNew={data.new} price={data.price} description={data.description} addToCart={addToCart} cartData={data.cartData} />
         <TextDetails features={data.features} box={data.box} />
         <PhotoGrid imageFolder={data.imageFolder} />
         <OtherProducts data={data.others} />
