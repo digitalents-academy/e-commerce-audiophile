@@ -22,7 +22,7 @@ const Items = (props) => {
     )
   } else {
     return (
-      <p>No items in cart</p>
+      <h6>No items in cart</h6>
     )
   }
 }
@@ -41,6 +41,10 @@ const Summary = (props) => {
       setTotal(newTotal)
       setVat(newVat)
       setGrandTotal(newTotal + newVat + shipping)
+    } else {
+      setTotal(0)
+      setVat(0)
+      setGrandTotal(50)
     }
   }, [props.cart])
 
@@ -67,7 +71,7 @@ const Summary = (props) => {
           <span id="total-price" className="orange">$ {formatPrice(grandTotal)}</span>
         </div>
         <div>
-          <button className="continue-button">Continue & Pay</button>
+          <button className="continue-button" disabled={props.cart.length === 0}>Continue & Pay</button>
         </div>
     </div>
   )
