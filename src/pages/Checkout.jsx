@@ -46,12 +46,17 @@ const Checkout = () => {
   }
 
   const validateForm = (e) => {
-    switch (e.target.name) {
+    const targetName = e.target.name
+    switch (targetName) {
       case "name":
-        if (formData.name === "") {
-          setErrors({...errors, name: "Field cannot be empty"})
+      case "number":
+      case "address":
+      case "city":
+      case "country":
+        if (formData[targetName] === "") {
+          setErrors({...errors, [targetName]: "Field cannot be empty"})
         } else {
-          setErrors({...errors, name: ""})
+          setErrors({...errors, [targetName]: ""})
         }
         break
       case "email":
@@ -63,20 +68,6 @@ const Checkout = () => {
           setErrors({...errors, email: ""})
         }
         break
-      case "number":
-        if (formData.number === "") {
-          setErrors({...errors, number: "Field cannot be empty"})
-        } else {
-          setErrors({...errors, number: ""})
-        }
-        break
-      case "address":
-        if (formData.address === "") {
-          setErrors({...errors, address: "Field cannot be empty"})
-        } else {
-          setErrors({...errors, address: ""})
-        }
-        break
       case "zip":
         if (formData.zip === "") {
           setErrors({...errors, zip: "Field cannot be empty"})
@@ -84,20 +75,6 @@ const Checkout = () => {
           setErrors({...errors, zip: "Wrong format"})
         } else {
           setErrors({...errors, zip: ""})
-        }
-        break
-      case "city":
-        if (formData.city === "") {
-          setErrors({...errors, city: "Field cannot be empty"})
-        } else {
-          setErrors({...errors, city: ""})
-        }
-        break
-      case "country":
-        if (formData.country === "") {
-          setErrors({...errors, country: "Field cannot be empty"})
-        } else {
-          setErrors({...errors, country: ""})
         }
         break
       case "eMoneyNumber":
