@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import BackButton from "../components/product-page/BackButton"
 import Form from "../components/checkout/Form"
 import Success from "../components/checkout/Success"
@@ -21,17 +22,7 @@ const Checkout = () => {
     eMoneyPin: ""
   })
   
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    number: "",
-    address: "",
-    zip: "",
-    city: "",
-    country: "",
-    eMoneyNumber: "",
-    eMoneyPin: "" 
-  })
+  const [errors, setErrors] = useState({})
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value })
@@ -56,7 +47,10 @@ const Checkout = () => {
         if (formData[targetName] === "") {
           setErrors({...errors, [targetName]: "Field cannot be empty"})
         } else {
-          setErrors({...errors, [targetName]: ""})
+          setErrors(current => {
+            const { [targetName]: _, ...rest } = current
+            return rest
+          })
         }
         break
       case "email":
@@ -65,7 +59,10 @@ const Checkout = () => {
         } else if (!/\S+@\S+\.\S+/.test(formData.email))
           setErrors({...errors, email: "Wrong format"})
         else {
-          setErrors({...errors, email: ""})
+          setErrors(current => {
+            const { [targetName]: _, ...rest } = current
+            return rest
+          })
         }
         break
       case "zip":
@@ -74,7 +71,10 @@ const Checkout = () => {
         } else if (!(formData.zip.length === 5) || (/[^\d]/.test(formData.zip))) {
           setErrors({...errors, zip: "Wrong format"})
         } else {
-          setErrors({...errors, zip: ""})
+          setErrors(current => {
+            const { [targetName]: _, ...rest } = current
+            return rest
+          })
         }
         break
       case "eMoneyNumber":
@@ -83,7 +83,10 @@ const Checkout = () => {
         } else if (!(formData.eMoneyNumber.length === 9) || (/[^\d]/.test(formData.eMoneyNumber))) {
           setErrors({...errors, eMoneyNumber: "Wrong format"})
         } else {
-          setErrors({...errors, eMoneyNumber: ""})
+          setErrors(current => {
+            const { [targetName]: _, ...rest } = current
+            return rest
+          })
         }
         break
       case "eMoneyPin":
@@ -92,9 +95,20 @@ const Checkout = () => {
         } else if (!(formData.eMoneyPin.length === 4) || (/[^\d]/.test(formData.eMoneyPin))) {
           setErrors({...errors, eMoneyPin: "Wrong format"})
         } else {
-          setErrors({...errors, eMoneyPin: ""})
+          setErrors(current => {
+            const { [targetName]: _, ...rest } = current
+            return rest
+          })
         }
         break
+    }
+  }
+
+  const continuePay = () => {
+    if (errors.length === 0) {
+      console.log("submitted successfully")
+    } else {
+      console.log("information missing")
     }
   }
 
@@ -103,7 +117,7 @@ const Checkout = () => {
       <BackButton />
       <div className="checkout-flex">
       <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} errors={errors} />
-      <Summary cart={cart} />
+      <Summary cart={cart} continuePay={continuePay} />
       </div>
       <Success />
     </div>
