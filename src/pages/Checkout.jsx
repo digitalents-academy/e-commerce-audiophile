@@ -36,19 +36,18 @@ const Checkout = () => {
     }
   }
 
-  const validateForm = (e) => {
-    const targetName = e.target.name
-    switch (targetName) {
+  const validationSwitch = (e) => {
+    switch (e) {
       case "name":
       case "number":
       case "address":
       case "city":
       case "country":
-        if (formData[targetName] === "") {
-          setErrors({...errors, [targetName]: "Field cannot be empty"})
+        if (formData[e] === "") {
+          setErrors({...errors, [e]: "Field cannot be empty"})
         } else {
           setErrors(current => {
-            const { [targetName]: _, ...rest } = current
+            const { [e]: _, ...rest } = current
             return rest
           })
         }
@@ -60,7 +59,7 @@ const Checkout = () => {
           setErrors({...errors, email: "Wrong format"})
         else {
           setErrors(current => {
-            const { [targetName]: _, ...rest } = current
+            const { [e]: _, ...rest } = current
             return rest
           })
         }
@@ -72,7 +71,7 @@ const Checkout = () => {
           setErrors({...errors, zip: "Wrong format"})
         } else {
           setErrors(current => {
-            const { [targetName]: _, ...rest } = current
+            const { [e]: _, ...rest } = current
             return rest
           })
         }
@@ -85,7 +84,7 @@ const Checkout = () => {
             setErrors({...errors, eMoneyNumber: "Wrong format"})
           } else {
             setErrors(current => {
-              const { [targetName]: _, ...rest } = current
+              const { [e]: _, ...rest } = current
               return rest
             })
           }
@@ -99,7 +98,7 @@ const Checkout = () => {
             setErrors({...errors, eMoneyPin: "Wrong format"})
           } else {
             setErrors(current => {
-              const { [targetName]: _, ...rest } = current
+              const { [e]: _, ...rest } = current
               return rest
             })
           }
@@ -108,7 +107,21 @@ const Checkout = () => {
     }
   }
 
+  const validateForm = (e) => {
+    const targetName = e.target.name
+    validationSwitch(targetName)
+  }
+
+  const validateOnSubmit = () => {
+    const formKeys = Object.keys(formData)
+    formKeys.forEach(key => {
+      validationSwitch(key)
+      console.log(key)
+    })
+  }
+
   const continuePay = () => {
+    validateOnSubmit()
     let formKeys = Object.keys(formData)
     let errorKeys = Object.keys(errors)
     if (!formData.eMoney) {
