@@ -71,7 +71,7 @@ const Summary = (props) => {
           <span id="total-price" className="orange">$ {formatPrice(grandTotal)}</span>
         </div>
         <div>
-          <button className="continue-button" disabled={props.cart.length === 0}>Continue & Pay</button>
+          <button className="continue-button" disabled={props.cart.length === 0} onClick={props.continuePay}>Continue & Pay</button>
         </div>
     </div>
   )

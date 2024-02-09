@@ -78,38 +78,48 @@ const Checkout = () => {
         }
         break
       case "eMoneyNumber":
-        if (formData.eMoneyNumber === "") {
-          setErrors({...errors, eMoneyNumber: "Field cannot be empty"})
-        } else if (!(formData.eMoneyNumber.length === 9) || (/[^\d]/.test(formData.eMoneyNumber))) {
-          setErrors({...errors, eMoneyNumber: "Wrong format"})
-        } else {
-          setErrors(current => {
-            const { [targetName]: _, ...rest } = current
-            return rest
-          })
+        if (formData.eMoney) {
+          if (formData.eMoneyNumber === "") {
+            setErrors({...errors, eMoneyNumber: "Field cannot be empty"})
+          } else if (!(formData.eMoneyNumber.length === 9) || (/[^\d]/.test(formData.eMoneyNumber))) {
+            setErrors({...errors, eMoneyNumber: "Wrong format"})
+          } else {
+            setErrors(current => {
+              const { [targetName]: _, ...rest } = current
+              return rest
+            })
+          }
         }
         break
       case "eMoneyPin":
-        if (formData.eMoneyPin === "") {
-          setErrors({...errors, eMoneyPin: "Field cannot be empty"})
-        } else if (!(formData.eMoneyPin.length === 4) || (/[^\d]/.test(formData.eMoneyPin))) {
-          setErrors({...errors, eMoneyPin: "Wrong format"})
-        } else {
-          setErrors(current => {
-            const { [targetName]: _, ...rest } = current
-            return rest
-          })
+        if (formData.eMoney) {
+          if (formData.eMoneyPin === "") {
+            setErrors({...errors, eMoneyPin: "Field cannot be empty"})
+          } else if (!(formData.eMoneyPin.length === 4) || (/[^\d]/.test(formData.eMoneyPin))) {
+            setErrors({...errors, eMoneyPin: "Wrong format"})
+          } else {
+            setErrors(current => {
+              const { [targetName]: _, ...rest } = current
+              return rest
+            })
+          }
         }
         break
     }
   }
 
   const continuePay = () => {
-    if (errors.length === 0) {
+    let formKeys = Object.keys(formData)
+    let errorKeys = Object.keys(errors)
+    if (!formData.eMoney) {
+      formKeys = formKeys.filter(key => key !== "eMoneyNumber" && key !== "eMoneyPin")
+      errorKeys = errorKeys.filter(key => key !== "eMoneyNumber" && key !== "eMoneyPin")
+    }
+    if ((errorKeys.length === 0) && (!formKeys.some(key => formData[key] === ""))) {
       console.log("submitted successfully")
     } else {
       console.log("information missing")
-    }
+    } 
   }
 
   return (
