@@ -7,7 +7,7 @@ import { useState } from "react"
 import { useOutletContext } from "react-router-dom"
 
 const Checkout = () => {
-  const { cart } = useOutletContext()
+  const { cart, successfulSubmit, backHome } = useOutletContext()
 
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +23,7 @@ const Checkout = () => {
   })
   
   const [errors, setErrors] = useState({})
-  const [success, setSuccess] = useState(true)
+  const [success, setSuccess] = useState(false)
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value })
@@ -133,6 +133,7 @@ const Checkout = () => {
     }
     if ((errorKeys.length === 0) && (!formKeys.some(key => formData[key] === ""))) {
       setSuccess(true)
+      successfulSubmit()
     } else {
       console.log("information missing")
     } 
@@ -145,7 +146,7 @@ const Checkout = () => {
       <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} errors={errors} />
       <Summary cart={cart} continuePay={continuePay} />
       </div>
-      {success ? <Success /> : null}
+      {success ? <Success onClick={backHome}/> : null}
     </div>
   )
 }

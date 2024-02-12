@@ -8,7 +8,7 @@ import { ToastContainer, toast, Zoom } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
-  const [mainStyle, setMainStyle] = useState("")
+  const [mainStyle, setMainStyle] = useState("cart-open")
   const [isHidden, setIsHidden] = useState(true)
   const [cart, setCart] = useState([])
   const [totalQuantity, setTotalQuantity] = useState(0)
@@ -105,6 +105,17 @@ const App = () => {
     }
   }
 
+  const successfulSubmit = () => {
+    setMainStyle('cart-open')
+  }
+
+  const backHome = () => {
+    setMainStyle('')
+    localStorage.removeItem("cart")
+    setCart([])
+    setTotalQuantity(0)
+  }
+
   return (
     <div className={'main ' + mainStyle}>
       <Cart onClick={cartOffClick} isHidden={isHidden} cart={cart} removeAll={removeAll} increaseQuantity={increaseQuantity} decreaseQuantity={decreaseQuantity} />
@@ -124,7 +135,7 @@ const App = () => {
       />
       <div>
         <Outlet context={{
-          addToCart, cart, removeAll
+          addToCart, cart, backHome, successfulSubmit
         }} />
       </div>
       <Footer />
