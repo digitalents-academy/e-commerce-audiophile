@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 
 import App from './App.jsx'
 import Home from './pages/Home.jsx'
@@ -19,7 +19,7 @@ import ZX7Speakers from './pages/speakers/ZX7Speakers.jsx'
 
 import YX1Wireless from './pages/earphones/YX1Wireless.jsx'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
