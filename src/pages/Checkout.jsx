@@ -23,7 +23,7 @@ const Checkout = () => {
   })
   
   const [errors, setErrors] = useState({})
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(true)
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value })
@@ -146,7 +146,7 @@ const Checkout = () => {
       <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} errors={errors} />
       <Summary cart={cart} continuePay={continuePay} />
       </div>
-      {success ? <Success onClick={backHome}/> : null}
+      {success ? <Success onClick={backHome} cart={cart} /> : null}
     </div>
   )
 }
