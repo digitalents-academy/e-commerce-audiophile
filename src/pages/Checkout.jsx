@@ -23,6 +23,7 @@ const Checkout = () => {
   })
   
   const [errors, setErrors] = useState({})
+  const [success, setSuccess] = useState(false)
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value })
@@ -36,18 +37,19 @@ const Checkout = () => {
     }
   }
 
-  const validationSwitch = (e) => {
-    switch (e) {
+  const validateForm = (e) => {
+    const targetName = e.target.name
+    switch (targetName) {
       case "name":
       case "number":
       case "address":
       case "city":
       case "country":
-        if (formData[e] === "") {
-          setErrors({...errors, [e]: "Field cannot be empty"})
+        if (formData[targetName] === "") {
+          setErrors({...errors, [targetName]: "Field cannot be empty"})
         } else {
           setErrors(current => {
-            const { [e]: _, ...rest } = current
+            const { [targetName]: _, ...rest } = current
             return rest
           })
         }
@@ -59,7 +61,7 @@ const Checkout = () => {
           setErrors({...errors, email: "Wrong format"})
         else {
           setErrors(current => {
-            const { [e]: _, ...rest } = current
+            const { [targetName]: _, ...rest } = current
             return rest
           })
         }
@@ -71,7 +73,7 @@ const Checkout = () => {
           setErrors({...errors, zip: "Wrong format"})
         } else {
           setErrors(current => {
-            const { [e]: _, ...rest } = current
+            const { [targetName]: _, ...rest } = current
             return rest
           })
         }
@@ -84,7 +86,7 @@ const Checkout = () => {
             setErrors({...errors, eMoneyNumber: "Wrong format"})
           } else {
             setErrors(current => {
-              const { [e]: _, ...rest } = current
+              const { [targetName]: _, ...rest } = current
               return rest
             })
           }
@@ -98,7 +100,7 @@ const Checkout = () => {
             setErrors({...errors, eMoneyPin: "Wrong format"})
           } else {
             setErrors(current => {
-              const { [e]: _, ...rest } = current
+              const { [targetName]: _, ...rest } = current
               return rest
             })
           }
@@ -107,21 +109,22 @@ const Checkout = () => {
     }
   }
 
-  const validateForm = (e) => {
-    const targetName = e.target.name
-    validationSwitch(targetName)
-  }
-
   const validateOnSubmit = () => {
-    const formKeys = Object.keys(formData)
-    formKeys.forEach(key => {
-      validationSwitch(key)
-      console.log(key)
+    let submitErrors = {}
+    let keys = Object.keys(formData)
+    if (!formData.eMoney) {
+      keys = keys.filter(key => key !== "eMoneyNumber" && key !== "eMoneyPin")
+    }
+    keys.forEach(key => {
+      if (formData[key] === "") {
+        submitErrors[key] = "Field cannot be empty"
+      }
     })
+    return submitErrors
   }
 
   const continuePay = () => {
-    validateOnSubmit()
+    setErrors(validateOnSubmit())
     let formKeys = Object.keys(formData)
     let errorKeys = Object.keys(errors)
     if (!formData.eMoney) {
@@ -129,7 +132,7 @@ const Checkout = () => {
       errorKeys = errorKeys.filter(key => key !== "eMoneyNumber" && key !== "eMoneyPin")
     }
     if ((errorKeys.length === 0) && (!formKeys.some(key => formData[key] === ""))) {
-      console.log("submitted successfully")
+      setSuccess(true)
     } else {
       console.log("information missing")
     } 
@@ -142,7 +145,7 @@ const Checkout = () => {
       <Form handleChange={handleChange} handleMethod={handleMethod} checkedState={formData.eMoney} validateForm={validateForm} errors={errors} />
       <Summary cart={cart} continuePay={continuePay} />
       </div>
-      <Success />
+      {success ? <Success /> : null}
     </div>
   )
 }
