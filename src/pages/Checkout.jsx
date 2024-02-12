@@ -23,7 +23,7 @@ const Checkout = () => {
   })
   
   const [errors, setErrors] = useState({})
-  const [success, setSuccess] = useState(false)
+  const [success, setSuccess] = useState(true)
 
   const handleChange = (e) => {
     setFormData({...formData, [e.target.name]: e.target.value })
