@@ -3,6 +3,14 @@ import Advert from '../components/shared/Advert'
 import CategoryTitle from '../components/category-page/CategoryTitle'
 import CategoryProduct from '../components/category-page/CategoryProduct'
 
+import zx9desktop from '../../assets/category-speakers/desktop/image-zx9.jpg'
+import zx9tablet from '../../assets/category-speakers/tablet/image-zx9.jpg'
+import zx9mobile from '../../assets/category-speakers/mobile/image-zx9.jpg'
+
+import zx7desktop from '../../assets/category-speakers/desktop/image-zx7.jpg'
+import zx7tablet from '../../assets/category-speakers/tablet/image-zx7.jpg'
+import zx7mobile from '../../assets/category-speakers/mobile/image-zx7.jpg'
+
 const Speakers = () => {
   const data = [
     {
@@ -27,8 +35,8 @@ const Speakers = () => {
     <>
       <CategoryTitle title="Speakers" />
       <div id="products" className='more-gap'>
-        <CategoryProduct data={data[0]} right={true} />
-        <CategoryProduct data={data[1]} right={false} />
+        <CategoryProduct data={data[0]} right={true} desktop={zx9desktop} tablet={zx9tablet} mobile={zx9mobile} />
+        <CategoryProduct data={data[1]} right={false} desktop={zx7desktop} tablet={zx7tablet} mobile={zx7mobile} />
       </div>
     <div className='non-flex'>
       <Catalog />

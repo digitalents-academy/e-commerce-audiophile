@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const CategoryProduct = ({ data, right }) => {
+const CategoryProduct = ({ data, right, desktop, tablet, mobile }) => {
   return (
     <div className={"category-product " + (right ? "" : "category-odd")}>
       <div className="product-details">
@@ -11,9 +11,9 @@ const CategoryProduct = ({ data, right }) => {
       </div>
       <div>
       <picture>
-        <source media="(min-width:768px) and (max-width:1440px)" srcSet={"../../assets/category-" + data.category + "/tablet/" + data.image} />
-        <source media="(min-width: 1440px)" srcSet={"../../assets/category-" + data.category + "/desktop/" + data.image} />
-        <img src={"../../assets/category-" + data.category + "/mobile/" + data.image} alt={data.name + " " + data.category} />
+        <source media="(min-width:768px) and (max-width:1440px)" srcSet={tablet} />
+        <source media="(min-width: 1440px)" srcSet={desktop} />
+        <img src={mobile} alt={data.name + " " + data.category} />
       </picture>
       </div>
     </div>
