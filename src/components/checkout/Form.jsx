@@ -4,7 +4,7 @@ const Payment = ({ handleChange, checkedState, onBlur, errors }) => {
       <>
       <div className="form-half">
       <div className="label-flex">
-          <label>e-Money Number</label>
+          <label className={errors.eMoneyNumber ? "label-error" : ""}>e-Money Number</label>
           {errors.eMoneyNumber ? (
             <span className="error-message">{errors.eMoneyNumber}</span>
           ) : null}
@@ -13,7 +13,7 @@ const Payment = ({ handleChange, checkedState, onBlur, errors }) => {
       </div>
       <div className="form-half">
       <div className="label-flex">
-          <label>e-Money PIN</label>
+          <label className={errors.eMoneyPin ? "label-error" : ""}>e-Money PIN</label>
           {errors.eMoneyPin ? (
             <span className="error-message">{errors.eMoneyPin}</span>
           ) : null}
@@ -44,7 +44,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           <div className="form-flex">
             <div className="form-half">
               <div className="label-flex">
-          <label>Name</label>
+          <label className={errors.name ? "label-error" : ""}>Name</label>
           {errors.name ? (
             <span className="error-message">{errors.name}</span>
           ) : null}
@@ -53,7 +53,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
             </div>
             <div className="form-half">
             <div className="label-flex">
-          <label>Email Address</label>
+          <label className={errors.email ? "label-error" : ""}>Email Address</label>
           {errors.email ? (
             <span className="error-message">{errors.email}</span>
           ) : null}
@@ -63,7 +63,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           <div className="break"></div>
           <div className="form-half">
           <div className="label-flex">
-          <label>Phone Number</label>
+          <label className={errors.number ? "label-error" : ""}>Phone Number</label>
           {errors.number ? (
             <span className="error-message">{errors.number}</span>
           ) : null}
@@ -77,7 +77,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           <div className="form-flex">
           <div className="form-full">
           <div className="label-flex">
-          <label>Your Address</label>
+          <label className={errors.address ? "label-error" : ""}>Your Address</label>
           {errors.address ? (
             <span className="error-message">{errors.address}</span>
           ) : null}
@@ -87,7 +87,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           <div className="break"></div>
           <div className="form-half">
           <div className="label-flex">
-          <label>ZIP Code</label>
+          <label className={errors.zip ? "label-error" : ""}>ZIP Code</label>
           {errors.zip ? (
             <span className="error-message">{errors.zip}</span>
           ) : null}
@@ -96,7 +96,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           </div>
           <div className="form-half">
           <div className="label-flex">
-          <label>City</label>
+          <label className={errors.city ? "label-error" : ""}>City</label>
           {errors.city ? (
             <span className="error-message">{errors.city}</span>
           ) : null}
@@ -106,7 +106,7 @@ const Form = ({ handleChange, handleMethod, checkedState, validateForm, errors }
           <div className="break"></div>
           <div className="form-half">
           <div className="label-flex">
-          <label>Country</label>
+          <label className={errors.country ? "label-error" : ""}>Country</label>
           {errors.country ? (
             <span className="error-message">{errors.country}</span>
           ) : null}

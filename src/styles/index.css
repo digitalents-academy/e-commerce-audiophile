@@ -930,6 +930,10 @@ input[type=text]::placeholder {
   border: 1px solid rgb(205, 44, 44) !important;
 }
 
+.label-error {
+  color: rgb(205, 44, 44);
+}
+
 .form-flex {
   display: flex;
   width: 100%;
