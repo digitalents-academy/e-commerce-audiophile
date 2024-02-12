@@ -8,7 +8,7 @@ import { ToastContainer, toast, Zoom } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
 const App = () => {
-  const [mainStyle, setMainStyle] = useState("cart-open")
+  const [mainStyle, setMainStyle] = useState("")
   const [isHidden, setIsHidden] = useState(true)
   const [cart, setCart] = useState([])
   const [totalQuantity, setTotalQuantity] = useState(0)
