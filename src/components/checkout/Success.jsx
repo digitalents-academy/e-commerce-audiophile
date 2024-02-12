@@ -5,8 +5,35 @@ const formatPrice = price => {
   return price.toString().replace(/(?<=\d)(?=(\d\d\d)+(?!\d))/g, ",")
 }
 
+const MoreItems = (props) => {
+  return (
+    props.cart.map(item => {
+      if (item.shortName !== props.cart[0].shortName) {
+        return (
+          <div key={item.shortName} className="order-grid">
+          <img src={"../../../assets/cart/" + item.cartImage} alt="" className="photo-wrapper"/>
+          <div className="name-wrapper">{item.shortName}</div>
+          <div className="price-wrapper">$ {formatPrice(item.price)}</div>
+          <div className="quantity-wrapper">
+            <span id="quantity-summary">x{item.quantity}</span>
+          </div>
+      </div>
+      )}
+    })
+  )}
+
 const Items = (props) => {
-  if (props.cart.length === 2) {
+  const [showMore, setShowMore] = useState(false)
+
+  const showMoreItems = () => {
+    if (showMore) {
+      setShowMore(false)
+    } else {
+      setShowMore(true)
+    }
+  }
+
+  if (props.cart.length === 1) {
     return (
         <div key={props.cart[0].shortName} className="order-grid">
             <img src={"../../../assets/cart/" + props.cart[0].cartImage} alt="" className="photo-wrapper"/>
@@ -20,7 +47,20 @@ const Items = (props) => {
   } else {
     return (
       <div>
-
+      <div key={props.cart[0].shortName} className="order-grid">
+            <img src={"../../../assets/cart/" + props.cart[0].cartImage} alt="" className="photo-wrapper"/>
+            <div className="name-wrapper">{props.cart[0].shortName}</div>
+            <div className="price-wrapper">$ {formatPrice(props.cart[0].price)}</div>
+            <div className="quantity-wrapper">
+              <span id="quantity-summary">x{props.cart[0].quantity}</span>
+            </div>
+      </div>
+      {showMore ? (
+        <>
+      <MoreItems cart={props.cart} />
+      <h3 onClick={showMoreItems}>View less</h3>
+      </>
+    ) : <h3 onClick={showMoreItems}>and {props.cart.length - 1} other item(s)</h3>}
       </div>
     )
   }
